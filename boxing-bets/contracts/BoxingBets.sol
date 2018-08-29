@@ -102,7 +102,6 @@ contract BoxingBets {
         require(_matchOpenForBetting(_matchId), "Match not open for betting"); 
 
         //transfer the money into the account 
-        //TODO: why this not work
         //address(this).transfer(msg.value);
 
         //add the new bet 
