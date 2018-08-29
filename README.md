@@ -112,7 +112,7 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/truffl
 - note that truffle init created a directory called "migrations". Inside of that folder should be a file named "1_initial_migration.js". 
 - add another file in the migrations directory; name it "2_deploy_contracts.js", with the following content: 
 ```
-	var BoxingOracle = artifacts.require("BoxingBets");
+	var BoxingBets = artifacts.require("BoxingBets");
 
 	module.exports = function(deployer) {
 		deployer.deploy(BoxingBets);
@@ -135,6 +135,8 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1
 A 'contract' in Solidity is roughly analagous to a class in other object-oriented languages. The language itself has been compared to Golang and Javascript, among others. Some other language constructs in Solidity - which we'll have examples of later - are modifiers, libraries, and interfaces. Inheritance (including multiple inheritance) is supported for contracts. Solidity contract files have a .sol extension. 
 
 #### OracleInterface
+add this file to your project: 
+
 /oracle-example/boxing-bets/contracts/OracleInterface.sol 
 
 https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contracts/OracleInterface.sol
@@ -142,6 +144,8 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contra
 Normally, the oracle interface would be just that - an interface. For this very first iteration, it's just a simple class contained within the Solidity project, just as a placeholder for now. We'll move it out in the very next step, after we successfully compile & run the contract on truffle. When we convert this to an actual interface, the function implementations will be empty. 
 	
 #### BoxingBets
+add this file to your project: 
+
 /oracle-example/boxing-bets/contracts/BoxingBets.sol
 
 https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contracts/BoxingBets.sol
@@ -185,11 +189,97 @@ now, "instance" is the variable which refers to the BoxingBets contract, and can
 ```
 instance.test(3, 4) 
 ```
+Note that we've included a public "test" function in BoxingBets.sol. It adds together whatever 2 numbers you pass to it, just to demonstrate that the contract is executing code, and that we can call it from the truffle develop console. If we get a sane-looking response (see below) then our job here is done! (for now) 
 
 ![](screenshots/truffle-migrate.png)
 
 ## Separate the Oracle 
 
+If everything has succeeded so far, then we're over the hump. The next thing we'll do is separate the oracle contract from the BoxingBets contract. In real usage, the oracle's contract will exist separately from the client contract on the blockchain, so we'll need to be able to: 
+- instantiate it by blockchain address 
+- dynamically change the oracle address that the client contract uses to reference the oracle 
+
+### boxing-bets
+First, we're going to change the client contract (boxing-bets) so that it refers to a dynamic interface to an oracle rather than a concrete class. Then we'll make sure that it instantiates the oracle from an outside contract. 
+
+Go into /oracle-example/boxing-bets/contracts/OracleInterface.sol. As we noted before, this is currently not an interface, but we're about to make it one. Replace what's in there with the contents of: 
+
+https://github.com/jrkosinski/oracle-example/tree/part1-step2/boxing-bets/contracts/OracleInterface.sol
+
+```
+pragma solidity ^0.4.17;
+
+contract OracleInterface {
+
+    enum MatchOutcome {
+        Pending,    //match has not been fought to decision
+        Underway,   //match has started & is underway
+        Draw,       //anything other than a clear winner (e.g. cancelled)
+        Decided     //index of participant who is the winner 
+    }
+
+    function getPendingMatches() public view returns (bytes32[]);
+
+    function getAllMatches() public view returns (bytes32[]);
+
+    function matchExists(bytes32 _matchId) public view returns (bool); 
+
+    function getMatch(bytes32 _matchId) public view returns (
+        bytes32 id,
+        string name, 
+        string participants,
+        uint8 participantCount,
+        uint date, 
+        MatchOutcome outcome, 
+        int8 winner);
+
+    function getMostRecentMatch(bool _pending) public view returns (
+        bytes32 id,
+        string name, 
+        string participants,
+        uint participantCount,
+        uint date, 
+        MatchOutcome outcome, 
+        int8 winner);
+
+    function testConnection() public pure returns (bool);
+
+    function addTestData() public; 
+}
+```
+
+In BoxingBets.sol, we're going to replace this line: 
+```
+    OracleInterface internal boxingOracle = new OracleInterface(); 
+```
+
+with these two lines: 
+```
+    address internal boxingOracleAddr = 0;
+    OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
+```
+
+Now what we want is a way to set the address of the oracle, dynamically, and a function that we can call to find out the current oracle address. Add these two functions to BoxingBets.sol: 
+
+```
+    /// @notice sets the address of the boxing oracle contract to use 
+    /// @dev setting a wrong address may result in false return value, or error 
+    /// @param _oracleAddress the address of the boxing oracle 
+    /// @return true if connection to the new oracle address was successful
+    function setOracleAddress(address _oracleAddress) external onlyOwner returns (bool) {
+        boxingOracleAddr = _oracleAddress;
+        boxingOracle = OracleInterface(boxingOracleAddr); 
+        return boxingOracle.testConnection();
+    }
+
+    /// @notice gets the address of the boxing oracle being used 
+    /// @return the address of the currently set oracle 
+    function getOracleAddress() external view returns (address) {
+        return boxingOracleAddr;
+    }
+```
+
+### boxing-oracle
 
 ## Testing and Debugging 
 
