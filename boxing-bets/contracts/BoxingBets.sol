@@ -1,19 +1,21 @@
 pragma solidity ^0.4.17;
 
 import "./OracleInterface.sol";
+import "./Ownable.sol";
 
 
 /// @title BoxingBets
 /// @author John R. Kosinski
 /// @notice Takes bets and handles payouts for boxing matches 
-contract BoxingBets {
+contract BoxingBets is Ownable {
     
     //mappings 
     mapping(address => bytes32[]) private userToBets;
     mapping(bytes32 => Bet[]) private matchToBets;
 
     //boxing results oracle 
-    OracleInterface internal boxingOracle = new OracleInterface(); 
+    address internal boxingOracleAddr = 0;
+    OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
 
     //constants
     uint internal minimumBet = 1000000000000;
@@ -48,6 +50,22 @@ contract BoxingBets {
         return true;
     }
 
+
+    /// @notice sets the address of the boxing oracle contract to use 
+    /// @dev setting a wrong address may result in false return value, or error 
+    /// @param _oracleAddress the address of the boxing oracle 
+    /// @return true if connection to the new oracle address was successful
+    function setOracleAddress(address _oracleAddress) external onlyOwner returns (bool) {
+        boxingOracleAddr = _oracleAddress;
+        boxingOracle = OracleInterface(boxingOracleAddr); 
+        return boxingOracle.testConnection();
+    }
+
+    /// @notice gets the address of the boxing oracle being used 
+    /// @return the address of the currently set oracle 
+    function getOracleAddress() external view returns (address) {
+        return boxingOracleAddr;
+    }
  
     /// @notice gets a list ids of all currently bettable matches
     /// @return array of match ids 
@@ -117,5 +135,11 @@ contract BoxingBets {
     /// @return uint sum of two uints  
     function test(uint a, uint b) public pure returns (uint) {
         return (a + b); 
+    }
+
+    /// @notice for testing; tests that the boxing oracle is callable 
+    /// @return true if connection successful 
+    function testOracleConnection() public view returns (bool) {
+        return boxingOracle.testConnection(); 
     }
 }
