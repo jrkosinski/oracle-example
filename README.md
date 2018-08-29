@@ -76,8 +76,117 @@ It would be more than possible to do this whole tutorial with any simple text ed
 
 (the extensions are not required, they just make for a better coding environment) 
 
+
+
 ## Running the Code 
 
+### Project Setup 
+Some project setup will be necessary in order to integrate with truffle. Now we'll set up the shell for our project, both in truffle and in the directory structure. Just sit back, follow the steps robotically, and enjoy.  
+
+- create a directory to house all the code; call it oracle-example 
+- inside of the root directory, create two subdirectories, because eventually the project will consist of two sub-projects. Create the directories: 
+	*/oracle-example/boxing-bets*
+	*/oracle-example/boxing-oracle*
+- go into the boxing-bets folder, because that's the first project we're going to develop. Open a terminal (command line) window in the */oracle-example/boxing-bets* folder 
+- run the command "truffle init" 
+- note that among many files created are "truffle-config.js" and "truffle.js". We don't need both of them, so delete truffle-config.js (just to avoid confusion and clutter) 
+
+![](screenshots/truffle-init.png)
+
+- we need to edit truffle.js, in order to point truffle in the right direction for testing. Replace the contents of truffle.js with the following: 
+```
+	module.exports = {
+		networks: {
+			development: {
+				host: "localhost",
+				port: 8545,
+				network_id: "*" // Match any network id
+			}
+		}
+	};
+```
+https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/truffle.js
+
+![](screenshots/trufflejs.png)
+
+- note that truffle init created a directory called "migrations". Inside of that folder should be a file named "1_initial_migration.js". 
+- add another file in the migrations directory; name it "2_deploy_contracts.js", with the following content: 
+```
+	var BoxingOracle = artifacts.require("BoxingBets");
+
+	module.exports = function(deployer) {
+		deployer.deploy(BoxingBets);
+	};
+```
+https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/migrations/2_deploy_contracts.js
+
+![](screenshots/deployjs1.png)
+![](screenshots/deployjs2.png)
+
+
+### Adding the Code 
+
+Now that the simple setup is out of the way, we're set to begin coding. Remember, that this part of the article is still introduction & setup, so we're going to go rather quickly through the code. We'll get into more in-depth explanations of the code in part 2, and more in-depth discussion of the architecture & philosophy in part 3. That said, we'll touch quickly upon some core concepts evident in the code. 
+
+The full code for this step in the process is available on github: 
+https://github.com/jrkosinski/oracle-example/tree/part1-step1
+
+#### Contracts 
+A 'contract' in Solidity is roughly analagous to a class in other object-oriented languages. The language itself has been compared to Golang and Javascript, among others. Some other language constructs in Solidity - which we'll have examples of later - are modifiers, libraries, and interfaces. Inheritance (including multiple inheritance) is supported for contracts. Solidity contract files have a .sol extension. 
+
+#### OracleInterface
+/oracle-example/boxing-bets/contracts/OracleInterface.sol 
+
+https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contracts/OracleInterface.sol
+
+Normally, the oracle interface would be just that - an interface. For this very first iteration, it's just a simple class contained within the Solidity project, just as a placeholder for now. We'll move it out in the very next step, after we successfully compile & run the contract on truffle. When we convert this to an actual interface, the function implementations will be empty. 
+	
+#### BoxingBets
+/oracle-example/boxing-bets/contracts/BoxingBets.sol
+
+https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contracts/BoxingBets.sol
+ 
+This is the contract which consumes the boxing data, allows users to query available matches, and place bets on them. In later iterations, it will calculate and pay out winnings. 
+
+
+### Compiling and Running 
+
+Now is when we will see if we got everything right the first time! 
+
+- open a terminal in the /oracle-example/boxing-bets/ folder 
+- compile the code with this command: 
+```
+truffle compile
+```
+Alt: use my recompile.sh shell script (https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/recompile.sh) 
+
+Note that you will see alot of warnings, because our code is not yet in its final form. 
+
+![](truffle-compile.png)
+
+- open the truffle development console: 
+```
+truffle develop
+```
+
+![](truffle-develop.png)
+
+- migrate to the test network 
+```
+migrate
+```
+
+- at the development console prompt, enter the following line of code: 
+```
+BoxingBets.deployed().then(inst => { instance = inst })
+```
+now, "instance" is the variable which refers to the BoxingBets contract, and can be used to call its public methods. 
+- test it using the following command: 
+```
+instance.test(3, 4) 
+```
+
+![](truffle-migrate.png)
 
 ## Separate the Oracle 
 
