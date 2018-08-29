@@ -162,14 +162,14 @@ Alt: use my recompile.sh shell script (https://github.com/jrkosinski/oracle-exam
 
 Note that you will see alot of warnings, because our code is not yet in its final form. 
 
-![](truffle-compile.png)
+![](screenshots/truffle-compile.png)
 
 - open the truffle development console: 
 ```
 truffle develop
 ```
 
-![](truffle-develop.png)
+![](screenshots/truffle-develop.png)
 
 - migrate to the test network 
 ```
@@ -186,7 +186,7 @@ now, "instance" is the variable which refers to the BoxingBets contract, and can
 instance.test(3, 4) 
 ```
 
-![](truffle-migrate.png)
+![](screenshots/truffle-migrate.png)
 
 ## Separate the Oracle 
 
