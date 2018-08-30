@@ -4,17 +4,24 @@
 
 Ethereum Smart Contracts. More than just "the new hot thing", it's my belief that they (or something related) are poised to change the way that humans do business with one another in the upcoming new age of the internet. Time will tell if that's the case. 
 
-This is the first of a three part article on eth smart contract development with Solidity, most specifically exploring the contentious issue of the use of contracts with so-called "oracles" - which are basically contracts which pump data into the blockchain for use by other contracts. 
+This is the first of a three part article on eth smart contract development with Solidity, most specifically exploring the use of contracts with so-called "oracles" - which are basically contracts which pump data into the blockchain for use by other contracts. 
 
-The goal of this, part 1 of the series, is not to get into oracles, the philosophy behind them, or even very deeply into what they are; the goal of this part is simply to: 
+- Part 1: An introduction to development with truffle, and setup of project for further experimentation 
+- Part 2: Delve into the code for deeper examination 
+- Part 3: A conceptual discussion of oracles with smart contracts 
+
+The goal of this, part 1 of the series, is not to get much into the concept of the oracle, the philosophy behind them, or even very deeply into what they are; the goal of this part is simply to: 
 - get you set up with building smart contracts with truffle 
 - build a smart contract project which will serve us in parts 2 and 3
 - introduce a few concepts related to ethereum smart contracts and coding of smart contracts 
 - introduce the compile/run/debug cycle with truffle and smart contracts 
 
+**oracle**: A means for smart contracts to access data from the world outside the blockchain. A type of smart contract themselves, oracles take data from the outside world and put it into the blockchain for other smart contracts to consume. 
+
+The first part of this article will consist of getting set up with all the prerequisites. Then we'll set up a single smart contract and test it with truffle. Finally, we'll separate the oracle from the client, and test them jointly. 
 
 ### Software Requirements 
-- any major OS will work, though some of the installation & setup will of course be different. I have done all of this on ubuntu Linux (16.04). I have also had no problems setting up the environment on windows. I have not tried Mac, though I am aware that it's common to do so on Mac as well. 
+- any major OS will work, though some of the installation & setup will of course be different on different systems. I have done all of this on ubuntu Linux (16.04). I have also had no problems setting up the environment on windows. I have not tried Mac, though I am aware that it's common to do so on Mac as well. 
 - it is not necessary to run a full eth node; we will use truffle which comes with its own testnet. If you know a bit about what you're doing you can use any other testnet of your choosing; truffle's local dev testnet is just the easiest & most accessible for purposes of this tutorial. 
 
 ### Knowledge Requirements 
@@ -27,13 +34,14 @@ This article series *can* serve as a very first introduction to smart contracts,
 - https://cryptozombies.io/
 - https://codeburst.io/build-your-first-ethereum-smart-contract-with-solidity-tutorial-94171d6b1c4b
 
-A caveat: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
+**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
 
 
 ### Description of Example App
-
+TODO: add more about the use case 
 Use case: betting on boxing matches. Users can choose a boxing match, and make a bet on the winner (for simplicity's sake, you just pick the winner, nothing more fancy than that). When the winner is declared, the house (contract owner) takes a predetermined and transparent cut, the losers lose their stake, and the winners split the pot. The amount of the winners' take is determined by the size of their bet. 
 
+TODO: maybe remove this part 
 #### Brief Introduction: What is an Oracle?
 
 Smart contracts are a new thing, they've yet to take the mainstream, and so many aspects of how they will work have not yet been hammered out and standardized. I will briefly explain the impetus behind the idea of the "oracle", and - be patient - we'll get into it in more depth in later parts. 
@@ -78,22 +86,25 @@ It would be more than possible to do this whole tutorial with any simple text ed
 
 
 
-## Running the Code 
+## Setting up the Code 
 
 ### Project Setup 
-Some project setup will be necessary in order to integrate with truffle. Now we'll set up the shell for our project, both in truffle and in the directory structure. Just sit back, follow the steps robotically, and enjoy.  
+Truffle is a very convenient tool for compiling smart contracts, migrating them to a blockchain, and also it provides development & debugging utilities. Some project setup will be necessary in order to integrate with truffle. Now we'll set up the shell for our project, both in truffle and in the directory structure. Just sit back, follow the steps robotically for now, and enjoy.  
 
 - create a directory to house all the code; call it oracle-example 
 - inside of the root directory, create two subdirectories, because eventually the project will consist of two sub-projects. Create the directories: 
+
 	*/oracle-example/client*
+	
 	*/oracle-example/oracle*
+	
 - go into the client folder, because that's the first project we're going to develop. Open a terminal (command line) window in the */oracle-example/client* folder 
-- run the command "truffle init" 
-- note that among many files created are "truffle-config.js" and "truffle.js". We don't need both of them, so delete truffle-config.js (just to avoid confusion and clutter) 
+- run the command *truffle init*
+- note that among many files created are *truffle-config.js* and *truffle.js*. We don't need both of them, so delete *truffle-config.js* (just to avoid confusion and clutter) 
 
 ![](screenshots/truffle-init.png)
 
-- we need to edit truffle.js, in order to point truffle in the right direction for testing. Replace the contents of truffle.js with the following: 
+- we need to edit *truffle.js*, in order to point truffle in the right direction for testing. Replace the contents of *truffle.js* with the following: 
 ```
 	module.exports = {
 		networks: {
@@ -109,8 +120,8 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/truffle.js
 
 ![](screenshots/trufflejs.png)
 
-- note that truffle init created a directory called "migrations". Inside of that folder should be a file named "1_initial_migration.js". 
-- add another file in the migrations directory; name it "2_deploy_contracts.js", with the following content: 
+- note that truffle init created a directory called *migrations* (*oracle-example/client/migrations*). Inside of that folder should be a file named *1_initial_migration.js*. 
+- add another file in the migrations directory; name it *2_deploy_contracts.js*, with the following content: 
 ```
 	var BoxingBets = artifacts.require("BoxingBets");
 
@@ -126,7 +137,7 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/migrations/
 
 ### Adding the Code 
 
-Now that the simple setup is out of the way, we're set to begin coding. Remember, that this part of the article is still introduction & setup, so we're going to go rather quickly through the code. We'll get into more in-depth explanations of the code in part 2, and more in-depth discussion of the architecture & philosophy in part 3. That said, we'll touch quickly upon some core concepts evident in the code. 
+Now that the simple setup is out of the way, we're set to begin coding. Remember, that this part of the article is still introduction & setup, so we're going to go rather quickly through the code. We'll get into more in-depth explanations of the code in part 2, and more in-depth discussion of the architecture & concept in part 3. That said, we'll touch quickly upon some core concepts evident in the code. Follow carefully to keep up. 
 
 The full code for this step in the process is available on github: 
 https://github.com/jrkosinski/oracle-example/tree/part1-step1
@@ -134,38 +145,38 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1
 #### Contracts 
 A 'contract' in Solidity is roughly analagous to a class in other object-oriented languages. The language itself has been compared to Golang and Javascript, among others. Some other language constructs in Solidity - which we'll have examples of later - are modifiers, libraries, and interfaces. Inheritance (including multiple inheritance) is supported for contracts. Solidity contract files have a .sol extension. 
 
-#### Oracle 	Interface
+#### Oracle Interface
 add this file to your project: 
 
-/oracle-example/client/contracts/OracleInterface.sol 
+*/oracle-example/client/contracts/OracleInterface.sol*
 
 https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/contracts/OracleInterface.sol
 
-Normally, the oracle interface would be just that - an interface. For this very first iteration, it's just a simple class contained within the Solidity project, just as a placeholder for now. We'll move it out in the very next step, after we successfully compile & run the contract on truffle. When we convert this to an actual interface, the function implementations will be empty. 
+Normally, the oracle interface would be just that - an interface. For this very first iteration, it's just a simple class contained within the Solidity project, just as a placeholder for now. We'll move it out in the very next step, after we successfully compile & run the contract on truffle. After we convert this to an actual interface later on, the function implementations will be empty. 
 	
 #### Client Contract
 add this file to your project: 
 
-/oracle-example/client/contracts/BoxingBets.sol
+*/oracle-example/client/contracts/BoxingBets.sol*
 
 https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/contracts/BoxingBets.sol
  
-This is the contract which consumes the boxing data, allows users to query available matches, and place bets on them. In later iterations, it will calculate and pay out winnings. 
+This is the contract which consumes the boxing match data, allows users to query available matches, and place bets on them. In later iterations, it will calculate and pay out winnings. 
 
 
 ### Compiling and Running 
 
-Now is when we will see if we got everything right the first time! 
+Now is when we'll see if we got everything right the first time! 
 
 #### Compile and Migrate the Contract 
-- open a terminal in the /oracle-example/client/ folder 
+- open a terminal in the */oracle-example/client/* folder 
 - compile the code with this command: 
 ```
 truffle compile
 ```
-Alt: use my recompile.sh shell script (https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/recompile.sh) 
+Alternate: use my recompile.sh shell script (https://github.com/jrkosinski/oracle-example/tree/part1-step1/client/recompile.sh) 
 
-Note that you will see alot of warnings, because our code is not yet in its final form. 
+Note that you will see alot of warnings, because our code is not yet in its final form! 
 
 ![](screenshots/truffle-compile.png)
 
@@ -176,24 +187,25 @@ truffle develop
 
 ![](screenshots/truffle-develop.png)
 
-- migrate to the test network 
+- now, in the truffle developer console: migrate to the test network 
 ```
-migrate
+truffle(develop)> migrate
 ```
 
 #### Run the Contract 
 - at the development console prompt, enter the following line of code: 
 ```
-BoxingBets.deployed().then(inst => { instance = inst })
+truffle(develop)> BoxingBets.deployed().then(inst => { instance = inst })
 ```
 now, "instance" is the variable which refers to the BoxingBets contract, and can be used to call its public methods. 
 - test it using the following command: 
 ```
-instance.test(3, 4) 
+truffle(develop)> instance.test(3, 4) 
 ```
 Note that we've included a public "test" function in BoxingBets.sol. It adds together whatever 2 numbers you pass to it, just to demonstrate that the contract is executing code, and that we can call it from the truffle develop console. If we get a sane-looking response (see below) then our job here is done! (for now) 
 
 ![](screenshots/truffle-migrate.png)
+
 
 ## Separate the Oracle 
 
@@ -201,10 +213,12 @@ If everything has succeeded so far, then we're over the hump. The next thing we'
 - instantiate it by blockchain address 
 - dynamically change the oracle address that the client contract uses to reference the oracle 
 
-### client
+So in short, what we're going to do now is separate the oracle and the client into two separate blockchain contract entities, and make them talk to each other. The client will instantiate the oracle by address and call it. 
+
+### Client Contract
 First, we're going to change the client contract (client) so that it refers to a dynamic interface to an oracle rather than a concrete class. Then we'll make sure that it instantiates the oracle from an outside contract. 
 
-Go into /oracle-example/client/contracts/OracleInterface.sol. As we noted before, this is currently not an interface, but we're about to make it one. Replace what's in there with the contents of: 
+Go into */oracle-example/client/contracts/OracleInterface.sol*. As we noted before, this is currently not an interface, but we're about to make it one. Replace what's in there with the contents of: 
 
 https://github.com/jrkosinski/oracle-example/tree/part1-step2/client/contracts/OracleInterface.sol
 
@@ -281,19 +295,47 @@ Now what we want is a way to set the address of the oracle, dynamically, and a f
     }
 ```
 
-### oracle
+And finally, for testing the connection between the client and the oracle, we can replace the *test* function in BoxingBets with a function to test the oracle connection: 
+```
+    /// @notice for testing; tests that the boxing oracle is callable 
+    /// @return true if connection successful 
+    function testOracleConnection() public view returns (bool) {
+        return boxingOracle.testConnection(); 
+    }
+```
+
+#### Ownable 
+Notice that the definition for setOracleAddress has an *onlyOwner* modifier following it. That restricts this function from being called by anyone other than the contract's owner, even though the function is public. That is not a language feature. That's provided to us by the Ownable contract, which is lifted out of OpenZeppelin's library of general-utility Solidity contracts. We will get into the details of that in Part 2, but in order to facilitate the use of that *onlyOwner* modifier, we need to make a few changes: 
+
+- copy *Ownable.sol* from https://github.com/jrkosinski/oracle-example/tree/part1-step2/client/contracts/Ownable.sol into */oracle-example/client/contracts/*. 
+- add a reference to it at the top of *BoxingBets.sol*, like so: 
+```
+import "./Ownable.sol"
+```
+(you can add it just under the line that imports *OracleInterface.sol*) 
+- modify the contract declaration of BoxingBets to make it inherit from Ownable, from this: 
+```
+contract BoxingBets {
+```
+to this: 
+```
+contract BoxingBets is Ownable {
+```
+... and we should be all set. Full code is here in case you got lost: https://github.com/jrkosinski/oracle-example/tree/part1-step2/client/contracts
+
+### Oracle Contract
 
 #### Setup 
 
-Now that the BoxingBets contract is attempting to refer to a completely separate contract (that is the oracle), our next job is to create that oracle contract. So we're going to now create a whole separate project that will contain the oracle contract. It's essentially the same setup that we've already done for the client contract project; that is, setting up truffle for compiling & developing. 
+Now that the BoxingBets contract is attempting to refer to a completely separate contract (that is the oracle) by address, our next job is to create that oracle contract. So we're going to now create a whole separate project that will contain the oracle contract. It's essentially the same setup that we've already done for the client contract project; that is, setting up truffle for compiling & developing. 
 
-- you should already have a folder called /oracle-example/oracle/. Open a terminal in that directory. 
-- run the command "truffle init" 
+- you should already have a folder called */oracle-example/oracle/* which we created in a previous step (or if not, go ahead and create that empty directory now). Open a terminal in that directory. 
+- run the command *truffle init*
 
 ![](screenshots/truffle-init.png)
 
-- delete /oracle-example/oracle/truffle-config.js. 
-- edit /oracle-example/oracle/truffle.js like so: 
+- delete */oracle-example/oracle/truffle-config.js*. 
+- edit */oracle-example/oracle/truffle.js* like so: 
 
 ```
 	module.exports = {
@@ -306,11 +348,13 @@ Now that the BoxingBets contract is attempting to refer to a completely separate
 		}
 	};
 ```
+
+See example here: 
 https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/truffle.js
 
 ![](screenshots/trufflejs.png)
 
-- inside of /oracle-example/oracle/migrations/, create a file called "2_deploy_contracts.js", with the following content: 
+- inside of */oracle-example/oracle/migrations/*, create a file called *2_deploy_contracts.js*, with the following content: 
 ```
 	var BoxingOracle = artifacts.require("BoxingOracle");
 
@@ -318,16 +362,15 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/truffle.js
 		deployer.deploy(BoxingOracle);
 	};
 ```
-https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/migrations/2_deploy_contracts.js
 
-![](screenshots/deployjs1.png)
-![](screenshots/deployjs2.png)
+See example here: 
+https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/migrations/2_deploy_contracts.js
 
 #### Oracle Code 
 For this step, simply copy the following three files from https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/contracts/ into your /oracle-example/oracle/contracts/ folder: 
-- BoxingOracle.sol: the main oracle contract 
-- Ownable.sol: for owner-only functions, as we used in the client contract already 
-- DateLib.sol: a date library; we'll look at in more depth, in Part 2 of this series 
+- *BoxingOracle.sol*: the main oracle contract 
+- *Ownable.sol*: for owner-only functions, as we used in the client contract already 
+- *DateLib.sol*: a date library; we'll look at in more depth, in Part 2 of this series 
 
 ### Testing the Oracle 
 Now, in the project's current iteration, we really need to thoroughly test the oracle, since that will be our base on which we'll build the rest of the project. So, now that we've set up the oracle project and copied the code, we will want to: 
@@ -336,7 +379,7 @@ Now, in the project's current iteration, we really need to thoroughly test the o
 - run a few functions in the truffle console to ensure that the oracle is working as expected 
 
 #### Compile and Migrate the Oracle 
-Still in a terminal open to /oracle-example/oracle/, run the following commands. Again, these steps are identical to what we've already done to compile & migrate the client contract.  
+Still in a terminal open to */oracle-example/oracle/*, run the following commands. Again, these steps are identical to what we've already done to compile & migrate the client contract.  
 ```
 truffle compile
 ```
@@ -348,14 +391,13 @@ truffle develop
 ```
 - migrate to the test network 
 ```
-migrate
+truffle(develop)> migrate
 ```
-<screenshot?> 
 
 #### Run & Test the Oracle 
 Still in the truffle development console, enter this to capture a usable pointer to the oracle contract: 
 ```
-BoxingOracle.deployed().then(inst => { instance = inst })
+truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 ```
 
 Now we can (and should) run a suite of tests on our oracle contract to test it. Try running the following commands, each in turn, and examine the results. 
@@ -378,30 +420,99 @@ Now we're ready for the final test: to test that the client contract can call th
 - add test data to the oracle contract 
 - test that we can retrieve that data in the client contract 
 
-Open two terminal windows: one in /oracle-example/client/ and the other in /oracle-example/oracle/ 
+Open two terminal windows: 
+- one in */oracle-example/client/* 
+- and the other in */oracle-example/oracle/*
+
+I suggest that you keep the */oracle-example/client/* one open on the left, and the */oracle-example/oracle/* one open on the right, and follow along closely, to avoid confusion. 
 
 ### Compile and Run the Oracle Contract 
+
+- execute the following commands in the */oracle-example/oracle/* terminal: 
 ```
->bash recompile.sh
->truffle develop 
->migrate 
->BoxingOracle.deployed().then(inst => { instance = inst })
+bash recompile.sh
+truffle develop 
+truffle(develop)> migrate 
+truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 ```
+![](screenshots/compile-oracle.png)
 
 ### Compile and Run the Client Contract
+
+- execute the following commands in the */oracle-example/client/* terminal: 
 ```
->bash recompile.sh
->truffle develop 
->migrate 
->BoxingBets.deployed().then(inst => { instance = inst })
+bash recompile.sh
+truffle develop 
+truffle(develop)> migrate 
+truffle(develop)> BoxingBets.deployed().then(inst => { instance = inst })
 ```
+![](screenshots/compile-client.png)
 
 ### Get the Address of the Oracle Contract 
+- execute the following command to truffle in the */oracle-example/oracle/* terminal: 
+```
+truffle(develop)> instance.getAddress()
+```
+![](screenshots/get-address.png)
+
+copy the address which is the output from this call; and use it in the next step. 
 
 ### Set the Oracle Address in the Client Contract 
+- execute the following command to truffle in the */oracle-example/client/* terminal: 
+```
+truffle(develop)> instance.setOracleAddress('<insert address here, single quotes included>')
+```
 
-### Add Test Data to the Oracle Contract 
+and test it: 
+```
+truffle(develop)> instance.testOracleConnection()
+```
+if the output is "true", then we're good to go. 
+
+![](screenshots/oracle-connection.png)
 
 ### Test that we can Retrieve that Data in the Client Contract 
 
+- execute the following command to truffle in the */oracle-example/client/* terminal: 
+```
+truffle(develop)> instance.getBettableMatches()
+```
+
+it should return an empty array, because no test data has yet been added to the oracle side. 
+
+- execute the following command to truffle in the */oracle-example/oracle/* terminal to add test data: 
+```
+truffle(develop)> instance.addTestData()
+```
+
+- execute the following command to truffle in the */oracle-example/client/* terminal, to see if we can pick up the newly added test data from the client: 
+```
+truffle(develop)> instance.getBettableMatches()
+```
+
+![](screenshots/no-bettable-matches2.png)
+
+Now, if you take individual addresses from the array returned by *getBettableMatches()*, and plug them into *getMatch()*, like so: 
+
+![](screenshots/bettable-matches.png)
+
+... you're getting the individual match details for requested matches (client is on the left, oracle is on the right). 
+
+
 ## Conclusion 
+
+Our results from this exercise are limited, but then so were our goals, in order to keep a realistic pace. Our client does not yet have the ability to take bets, handle funds, divvy up the winnings, etc. What we do have - aside from the knowledge and experienced gained - is: 
+- a mostly functional oracle 
+- a client that can connect to and interact with the oracle 
+- a framework for further development and learning 
+
+... and that's not too bad for a short article. 
+
+### Further Optional Steps
+
+Solo experimentation is a good way to learn. Here are a few simple suggestions if you're thinking of ways to extend this tutorial for greater knowledge (none of the following will be covered in Parts 2 & 3): 
+- deploy the contracts to ganache (formerly testrpc), and run the same tests to verify function 
+- deploy the contracts to ropsten or rinkeby testnets, and run the same tests to verify function 
+- build a web3js front end for either the oracle, or the client (or both) 
+
+
