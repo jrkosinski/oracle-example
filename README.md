@@ -406,7 +406,7 @@ truffle develop
 >migrate 
 >BoxingOracle.deployed().then(inst => { instance = inst })
 ```
-<screenshot> 
+![](screenshots/compile-oracle.png)
 
 ### Compile and Run the Client Contract
 
@@ -417,14 +417,14 @@ truffle develop
 >migrate 
 >BoxingBets.deployed().then(inst => { instance = inst })
 ```
-<screenshot> 
+![](screenshots/compile-client.png)
 
 ### Get the Address of the Oracle Contract 
 - execute the following command to truffle in the */oracle-example/oracle/* terminal: 
 ```
 >instance.getAddress()
 ```
-<screenshot> 
+![](screenshots/get-address.png)
 copy the address which is the output from this call; and use it in the next step. 
 
 ### Set the Oracle Address in the Client Contract 
@@ -439,7 +439,7 @@ and test it:
 ```
 if the output is "true", then we're good to go. 
 
-<screenshot> 
+![](screenshots/oracle-connection.png)
 
 ### Test that we can Retrieve that Data in the Client Contract 
 
@@ -460,11 +460,11 @@ it should return an empty array, because no test data has yet been added to the 
 >instance.getBettableMatches()
 ```
 
-<screenshot> 
+![](screenshots/no-bettable-matches2.png)
 
 Now, if you take individual addresses from the array returned by *getBettableMatches()*, and plug them into *getMatch()*, like so: 
 
-<screenshot> 
+![](screenshots/bettable-matches.png)
 
 ... you are getting the individual match details for requested matches. 
 
