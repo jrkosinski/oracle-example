@@ -131,12 +131,6 @@ contract BoxingBets is Ownable {
         userBets.push(_matchId); 
     }
 
-    /// @notice for testing only; adds two numbers and returns result 
-    /// @return uint sum of two uints  
-    function test(uint a, uint b) public pure returns (uint) {
-        return (a + b); 
-    }
-
     /// @notice for testing; tests that the boxing oracle is callable 
     /// @return true if connection successful 
     function testOracleConnection() public view returns (bool) {

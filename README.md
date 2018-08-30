@@ -295,6 +295,15 @@ Now what we want is a way to set the address of the oracle, dynamically, and a f
     }
 ```
 
+And finally, for testing the connection between the client and the oracle, we can replace the *test* function in BoxingBets with a function to test the oracle connection: 
+```
+    /// @notice for testing; tests that the boxing oracle is callable 
+    /// @return true if connection successful 
+    function testOracleConnection() public view returns (bool) {
+        return boxingOracle.testConnection(); 
+    }
+```
+
 #### Ownable 
 Notice that the definition for setOracleAddress has an *onlyOwner* modifier following it. That restricts this function from being called by anyone other than the contract's owner, even though the function is public. That is not a language feature. That's provided to us by the Ownable contract, which is lifted out of OpenZeppelin's library of general-utility Solidity contracts. We will get into the details of that in Part 2, but in order to facilitate the use of that *onlyOwner* modifier, we need to make a few changes: 
 
@@ -312,7 +321,7 @@ to this:
 ```
 contract BoxingBets is Ownable {
 ```
-... and we should be all set.
+... and we should be all set. Full code is here in case you got lost: https://github.com/jrkosinski/oracle-example/tree/part1-step2/client/contracts
 
 ### Oracle Contract
 
