@@ -163,9 +163,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.17;\n\ncontract OracleInterface {\n\n    enum MatchOutcome {\n        Pending,    //match has not been fought to decision\n        Underway,   //match has started & is underway\n        Draw,       //anything other than a clear winner (e.g. cancelled)\n        Decided     //index of participant who is the winner \n    }\n\n    function getPendingMatches() public view returns (bytes32[]);\n\n    function getAllMatches() public view returns (bytes32[]);\n\n    function matchExists(bytes32 _matchId) public view returns (bool); \n\n    function getMatch(bytes32 _matchId) public view returns (\n        bytes32 id,\n        string name, \n        string participants,\n        uint8 participantCount,\n        uint date, \n        MatchOutcome outcome, \n        int8 winner);\n\n    function getMostRecentMatch(bool _pending) public view returns (\n        bytes32 id,\n        string name, \n        string participants,\n        uint participantCount,\n        uint date, \n        MatchOutcome outcome, \n        int8 winner);\n\n    function testConnection() public pure returns (bool);\n\n    function addTestData() public; \n}\n",
-  "sourcePath": "/media/acer/D/clients/toptal/articles/eth-oracle/code/step2/boxing-bets/contracts/OracleInterface.sol",
+  "sourcePath": "/media/acer/D/clients/toptal/articles/eth-oracle/repo/oracle-example/client/contracts/OracleInterface.sol",
   "ast": {
-    "absolutePath": "/media/acer/D/clients/toptal/articles/eth-oracle/code/step2/boxing-bets/contracts/OracleInterface.sol",
+    "absolutePath": "/media/acer/D/clients/toptal/articles/eth-oracle/repo/oracle-example/client/contracts/OracleInterface.sol",
     "exportedSymbols": {
       "OracleInterface": [
         388
@@ -1021,7 +1021,7 @@
     "src": "0:1119:2"
   },
   "legacyAST": {
-    "absolutePath": "/media/acer/D/clients/toptal/articles/eth-oracle/code/step2/boxing-bets/contracts/OracleInterface.sol",
+    "absolutePath": "/media/acer/D/clients/toptal/articles/eth-oracle/repo/oracle-example/client/contracts/OracleInterface.sol",
     "exportedSymbols": {
       "OracleInterface": [
         388
@@ -1882,5 +1882,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-29T01:59:51.284Z"
+  "updatedAt": "2018-08-30T07:07:02.710Z"
 }
