@@ -6,9 +6,9 @@ Ethereum Smart Contracts. More than just "the new hot thing", it's my belief tha
 
 This is the first of a three part article on eth smart contract development with Solidity, most specifically exploring the use of contracts with so-called "oracles" - which are basically contracts which pump data into the blockchain for use by other contracts. 
 
-Part 1: An introduction to development with truffle, and setup of project for further experimentation 
-Part 2: Delve into the code for deeper examination 
-Part 3: A conceptual discussion of oracles with smart contracts 
+- Part 1: An introduction to development with truffle, and setup of project for further experimentation 
+- Part 2: Delve into the code for deeper examination 
+- Part 3: A conceptual discussion of oracles with smart contracts 
 
 The goal of this, part 1 of the series, is not to get much into the concept of the oracle, the philosophy behind them, or even very deeply into what they are; the goal of this part is simply to: 
 - get you set up with building smart contracts with truffle 
@@ -18,10 +18,10 @@ The goal of this, part 1 of the series, is not to get much into the concept of t
 
 **oracle**: A means for smart contracts to access data from the world outside the blockchain. A type of smart contract themselves, oracles take data from the outside world and put it into the blockchain for other smart contracts to consume. 
 
-The first part of this oracle will consist of getting set up with all the prerequisites. Then we'll set up a single smart contract and test it with truffle. Finally, we'll separate the oracle from the client, and test them jointly. 
+The first part of this article will consist of getting set up with all the prerequisites. Then we'll set up a single smart contract and test it with truffle. Finally, we'll separate the oracle from the client, and test them jointly. 
 
 ### Software Requirements 
-- any major OS will work, though some of the installation & setup will of course be different. I have done all of this on ubuntu Linux (16.04). I have also had no problems setting up the environment on windows. I have not tried Mac, though I am aware that it's common to do so on Mac as well. 
+- any major OS will work, though some of the installation & setup will of course be different on different systems. I have done all of this on ubuntu Linux (16.04). I have also had no problems setting up the environment on windows. I have not tried Mac, though I am aware that it's common to do so on Mac as well. 
 - it is not necessary to run a full eth node; we will use truffle which comes with its own testnet. If you know a bit about what you're doing you can use any other testnet of your choosing; truffle's local dev testnet is just the easiest & most accessible for purposes of this tutorial. 
 
 ### Knowledge Requirements 
@@ -34,7 +34,7 @@ This article series *can* serve as a very first introduction to smart contracts,
 - https://cryptozombies.io/
 - https://codeburst.io/build-your-first-ethereum-smart-contract-with-solidity-tutorial-94171d6b1c4b
 
-A caveat: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
+**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
 
 
 ### Description of Example App
@@ -93,8 +93,11 @@ Truffle is a very convenient tool for compiling smart contracts, migrating them 
 
 - create a directory to house all the code; call it oracle-example 
 - inside of the root directory, create two subdirectories, because eventually the project will consist of two sub-projects. Create the directories: 
+
 	*/oracle-example/client*
+	
 	*/oracle-example/oracle*
+	
 - go into the client folder, because that's the first project we're going to develop. Open a terminal (command line) window in the */oracle-example/client* folder 
 - run the command *truffle init*
 - note that among many files created are *truffle-config.js* and *truffle.js*. We don't need both of them, so delete *truffle-config.js* (just to avoid confusion and clutter) 
@@ -186,18 +189,18 @@ truffle develop
 
 - now, in the truffle developer console: migrate to the test network 
 ```
->migrate
+truffle(develop)> migrate
 ```
 
 #### Run the Contract 
 - at the development console prompt, enter the following line of code: 
 ```
->BoxingBets.deployed().then(inst => { instance = inst })
+truffle(develop)> BoxingBets.deployed().then(inst => { instance = inst })
 ```
 now, "instance" is the variable which refers to the BoxingBets contract, and can be used to call its public methods. 
 - test it using the following command: 
 ```
->instance.test(3, 4) 
+truffle(develop)> instance.test(3, 4) 
 ```
 Note that we've included a public "test" function in BoxingBets.sol. It adds together whatever 2 numbers you pass to it, just to demonstrate that the contract is executing code, and that we can call it from the truffle develop console. If we get a sane-looking response (see below) then our job here is done! (for now) 
 
@@ -363,14 +366,13 @@ truffle develop
 ```
 - migrate to the test network 
 ```
->migrate
+truffle(develop)> migrate
 ```
-<screenshot?> 
 
 #### Run & Test the Oracle 
 Still in the truffle development console, enter this to capture a usable pointer to the oracle contract: 
 ```
-BoxingOracle.deployed().then(inst => { instance = inst })
+truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 ```
 
 Now we can (and should) run a suite of tests on our oracle contract to test it. Try running the following commands, each in turn, and examine the results. 
@@ -403,8 +405,8 @@ Open two terminal windows:
 ```
 bash recompile.sh
 truffle develop 
->migrate 
->BoxingOracle.deployed().then(inst => { instance = inst })
+truffle(develop)> migrate 
+truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 ```
 ![](screenshots/compile-oracle.png)
 
@@ -414,15 +416,15 @@ truffle develop
 ```
 bash recompile.sh
 truffle develop 
->migrate 
->BoxingBets.deployed().then(inst => { instance = inst })
+truffle(develop)> migrate 
+truffle(develop)> BoxingBets.deployed().then(inst => { instance = inst })
 ```
 ![](screenshots/compile-client.png)
 
 ### Get the Address of the Oracle Contract 
 - execute the following command to truffle in the */oracle-example/oracle/* terminal: 
 ```
->instance.getAddress()
+truffle(develop)> instance.getAddress()
 ```
 ![](screenshots/get-address.png)
 
@@ -431,7 +433,7 @@ copy the address which is the output from this call; and use it in the next step
 ### Set the Oracle Address in the Client Contract 
 - execute the following command to truffle in the */oracle-example/client/* terminal: 
 ```
->instance.setOracleAddress('<insert address here, single quotes included>')
+truffle(develop)> instance.setOracleAddress('<insert address here, single quotes included>')
 ```
 
 and test it: 
@@ -446,19 +448,19 @@ if the output is "true", then we're good to go.
 
 - execute the following command to truffle in the */oracle-example/client/* terminal: 
 ```
->instance.getBettableMatches()
+truffle(develop)> instance.getBettableMatches()
 ```
 
 it should return an empty array, because no test data has yet been added to the oracle side. 
 
 - execute the following command to truffle in the */oracle-example/oracle/* terminal to add test data: 
 ```
->instance.addTestData()
+truffle(develop)> instance.addTestData()
 ```
 
 - execute the following command to truffle in the */oracle-example/client/* terminal, to see if we can pick up the newly added test data from the client: 
 ```
->instance.getBettableMatches()
+truffle(develop)> instance.getBettableMatches()
 ```
 
 ![](screenshots/no-bettable-matches2.png)
