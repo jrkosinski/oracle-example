@@ -425,6 +425,7 @@ truffle develop
 >instance.getAddress()
 ```
 ![](screenshots/get-address.png)
+
 copy the address which is the output from this call; and use it in the next step. 
 
 ### Set the Oracle Address in the Client Contract 
@@ -466,7 +467,7 @@ Now, if you take individual addresses from the array returned by *getBettableMat
 
 ![](screenshots/bettable-matches.png)
 
-... you are getting the individual match details for requested matches. 
+... you're getting the individual match details for requested matches (client is on the left, oracle is on the right). 
 
 
 ## Conclusion 
@@ -479,6 +480,7 @@ Our results from this exercise are limited, but then so were our goals, in order
 ... and that's not too bad for a short article. 
 
 ### Further Optional Steps
+
 Solo experimentation is a good way to learn. Here are a few simple suggestions if you're thinking of ways to extend this tutorial for greater knowledge (none of the following will be covered in Parts 2 & 3): 
 - deploy the contracts to ganache (formerly testrpc), and run the same tests to verify function 
 - deploy the contracts to ropsten or rinkeby testnets, and run the same tests to verify function 
