@@ -134,7 +134,7 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1
 #### Contracts 
 A 'contract' in Solidity is roughly analagous to a class in other object-oriented languages. The language itself has been compared to Golang and Javascript, among others. Some other language constructs in Solidity - which we'll have examples of later - are modifiers, libraries, and interfaces. Inheritance (including multiple inheritance) is supported for contracts. Solidity contract files have a .sol extension. 
 
-#### OracleInterface
+#### Oracle Interface
 add this file to your project: 
 
 /oracle-example/boxing-bets/contracts/OracleInterface.sol 
@@ -143,7 +143,7 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step1/boxing-bets/contra
 
 Normally, the oracle interface would be just that - an interface. For this very first iteration, it's just a simple class contained within the Solidity project, just as a placeholder for now. We'll move it out in the very next step, after we successfully compile & run the contract on truffle. When we convert this to an actual interface, the function implementations will be empty. 
 	
-#### BoxingBets
+#### Client Contract
 add this file to your project: 
 
 /oracle-example/boxing-bets/contracts/BoxingBets.sol
@@ -279,7 +279,19 @@ Now what we want is a way to set the address of the oracle, dynamically, and a f
     }
 ```
 
+Note the 'onlyOwner' modifier on setOracleAddress. Together with the Ownable contract, this specifies that only the owner of this smart contract can call this function. Two steps to enable this: 
+1. Add Ownable.sol (https://github.com/jrkosinski/oracle-example/tree/part1-step2/boxing-bets/contracts/Ownable.sol) to /oracle-example/boxing-bets/contracts/ 
+2. In /oracle-example/boxing-bets/contracts/BoxingBets.sol, add "is Ownable" to the contract declaration, like this: 
+```
+contract BoxingBets is Ownable {
+    ...
+```
+
+We'll cover modifiers and inheritance more in detail in Part 2, but for now this will allow us to continue gaining ground. Your BoxingBets contract should now resemble the example: 
+https://github.com/jrkosinski/oracle-example/tree/part1-step2/boxing-bets/contracts/BoxingBets.sol
+
 ### boxing-oracle
+
 
 ## Testing and Debugging 
 
