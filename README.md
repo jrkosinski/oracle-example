@@ -295,6 +295,25 @@ Now what we want is a way to set the address of the oracle, dynamically, and a f
     }
 ```
 
+#### Ownable 
+Notice that the definition for setOracleAddress has an *onlyOwner* modifier following it. That restricts this function from being called by anyone other than the contract's owner, even though the function is public. That is not a language feature. That's provided to us by the Ownable contract, which is lifted out of OpenZeppelin's library of general-utility Solidity contracts. We will get into the details of that in Part 2, but in order to facilitate the use of that *onlyOwner* modifier, we need to make a few changes: 
+
+- copy *Ownable.sol* from https://github.com/jrkosinski/oracle-example/tree/part1-step2/client/contracts/Ownable.sol into */oracle-example/client/contracts/*. 
+- add a reference to it at the top of *BoxingBets.sol*, like so: 
+```
+import "./Ownable.sol"
+```
+(you can add it just under the line that imports *OracleInterface.sol*) 
+- modify the contract declaration of BoxingBets to make it inherit from Ownable, from this: 
+```
+contract BoxingBets {
+```
+to this: 
+```
+contract BoxingBets is Ownable {
+```
+... and we should be all set.
+
 ### Oracle Contract
 
 #### Setup 
@@ -337,9 +356,6 @@ https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/truffle.js
 
 See example here: 
 https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/migrations/2_deploy_contracts.js
-
-![](screenshots/deployjs1.png)
-![](screenshots/deployjs2.png)
 
 #### Oracle Code 
 For this step, simply copy the following three files from https://github.com/jrkosinski/oracle-example/tree/part1-step2/oracle/contracts/ into your /oracle-example/oracle/contracts/ folder: 
@@ -399,6 +415,8 @@ Open two terminal windows:
 - one in */oracle-example/client/* 
 - and the other in */oracle-example/oracle/*
 
+I suggest that you keep the */oracle-example/client/* one open on the left, and the */oracle-example/oracle/* one open on the right, and follow along closely, to avoid confusion. 
+
 ### Compile and Run the Oracle Contract 
 
 - execute the following commands in the */oracle-example/oracle/* terminal: 
@@ -438,7 +456,7 @@ truffle(develop)> instance.setOracleAddress('<insert address here, single quotes
 
 and test it: 
 ```
->instance.testOracleConnection()
+truffle(develop)> instance.testOracleConnection()
 ```
 if the output is "true", then we're good to go. 
 
