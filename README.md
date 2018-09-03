@@ -29,12 +29,14 @@ The first part of this article will consist of getting set up with all the prere
 - understanding of what a blockchain-based smart contract is 
 - some basic hello-worldish experience with smart contract development will be helpful, but not necessary if you're smart & ambitious (and I know that you are) 
 
-This article series *can* serve as a very first introduction to smart contracts, but it ramps up very quickly into more advanced concepts. If it's your first eth smart contract tutorial, be prepared to climb to altitude quickly. If you feel confident, great; if not, feel free to get a simpler 'hello world' type of tutorial or two under your belt first. Here are a few, for example: 
+This article series *can* serve as a very first introduction to smart contracts, but it ramps up very quickly into more advanced concepts. If it's your first eth smart contract tutorial, be prepared to climb to altitude quickly. If you feel confident, great; if not, feel free to get a simpler 'hello world' type of tutorial or two under your belt first. There are many. Here are a few, for example: 
 
 - https://cryptozombies.io/
+- https://www.ethereum.org/greeter
+- https://www.toptal.com/ethereum-smart-contract/time-locked-wallet-truffle-tutorial
 - https://codeburst.io/build-your-first-ethereum-smart-contract-with-solidity-tutorial-94171d6b1c4b
 
-**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
+**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. Solidity is always adding new language features, and deprecating old ones. Many new features are currently in the works. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
 
 
 ### Description of Example App
@@ -50,9 +52,9 @@ Use case: users bet on boxing matches.
 
 Smart contracts are still kind of a new thing; they've yet to take the mainstream, and so many aspects of how they will work have not yet been hammered out and standardized. I will briefly explain the impetus behind the idea of the "oracle", and - be patient - we'll get into it in more depth in later parts. 
 
-Programming blockchain contracts is not like programming a client-server app. All data with which the contract interacts, must already be on the blockchain. There is no calling *out* of the blockchain. Not only is it not supported by the language, it's not supported by the blockchain paradigm. The contract can take bets in the form of ethereum currency, store them in the contract, and release them to the correct wallet addresses according to a formula, when the winner of a match is declared. But how does the contract know the winner? It can't query a REST API or anything like that. It can only use data that's already in the blockchain! Many many use cases of smart contracts run into a similar problem - they are seriously limited unless they can interact with the world outside the blockchain. 
+Engineering a blockchain contract is not like programming a client-server app. One important difference is that data with which the contract interacts, must already be on the blockchain. There is no calling *out* of the blockchain. Not only is it not supported by the language, it's not supported by the blockchain paradigm. The contract can take bets in the form of ethereum currency, store them in the contract, and release them to the correct wallet addresses according to a formula, when the winner of a match is declared. But how does the contract know the winner? It can't query a REST API or anything like that. It can only use data that's already in the blockchain! Many many use cases of smart contracts run into a similar problem - they are seriously limited unless they can interact with the world outside the blockchain. 
 
-If the contract can only interact with data on the blockchain, an obvious solution is to inject the necessary data into the blockchain. And that's what an oracle is. An oracle is another contract, which injects data into the blockchain, allowing other contracts to consume it. While that may raise questions about trust and trustlessness, just accept for now that that's what an oracle is. In Part 3 of this series we'll discuss those nuances. In our example use case, the oracle will be the contract that injects data into the blockchain, regarding (a) what matches are available, and (b) who won those matches, once decided.  
+If the contract can only interact with data on the blockchain, an obvious solution is to inject the necessary data into the blockchain. And that's what an oracle is. An oracle is another contract, which injects data into the blockchain, allowing other contracts to consume it. While that may raise questions about trust and trustlessness, just accept for now that that's what an oracle is. In part 3 of this series we'll discuss those nuances. In our example use case, the oracle will be the contract that injects data into the blockchain, regarding (a) what matches are available, and (b) who won those matches, once decided.  
 
 ## Setup 
 
@@ -407,11 +409,16 @@ truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 Now we can (and should) run a suite of tests on our oracle contract to test it. Try running the following commands, each in turn, and examine the results. 
 
 ```
-instance.testConnection()
-instance.getAllMatches()
-instance.addTestData()
-instance.getAllMatches()
+truffle(develop)> instance.testConnection()
+...
+truffle(develop)> instance.getAllMatches()
+...
+truffle(develop)> instance.addTestData()
+...
+truffle(develop)> instance.getAllMatches()
+...
 ```
+You are encouraged at this point to have a look through the oracle code, see what public methods are available, read the comments in the code, and come up with some of your own tests to run (and run them here in the console, as shown above).
 
 
 ## Testing and Debugging 
@@ -501,6 +508,8 @@ Now, if you take individual addresses from the array returned by *getBettableMat
 
 ... you're getting the individual match details for requested matches (client is on the left, oracle is on the right). 
 
+You are encouraged at this point to have a look through the client code, see what public methods are available, read the comments in the code, and come up with some of your own tests to run (and run them here in the console, as above).
+
 
 ## Conclusion 
 
@@ -518,4 +527,4 @@ Solo experimentation is a good way to learn. Here are a few simple suggestions i
 - deploy the contracts to ropsten or rinkeby testnets, and run the same tests to verify function 
 - build a web3js front end for either the oracle, or the client (or both) 
 
-
+Good luck, and please feel free to contact me with any questions. I can't guarantee a speedy reply necessarily, but I will do my best. 
