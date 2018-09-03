@@ -29,26 +29,32 @@ The first part of this article will consist of getting set up with all the prere
 - understanding of what a blockchain-based smart contract is 
 - some basic hello-worldish experience with smart contract development will be helpful, but not necessary if you're smart & ambitious (and I know that you are) 
 
-This article series *can* serve as a very first introduction to smart contracts, but it ramps up very quickly into more advanced concepts. If it's your first eth smart contract tutorial, be prepared to climb to altitude quickly. If you feel confident, great; if not, feel free to get a simpler 'hello world' type of tutorial or two under your belt first. Here are a few, for example: 
+This article series *can* serve as a very first introduction to smart contracts, but it ramps up very quickly into more advanced concepts. If it's your first eth smart contract tutorial, be prepared to climb to altitude quickly. If you feel confident, great; if not, feel free to get a simpler 'hello world' type of tutorial or two under your belt first. There are many. Here are a few, for example: 
 
 - https://cryptozombies.io/
+- https://www.ethereum.org/greeter
+- https://www.toptal.com/ethereum-smart-contract/time-locked-wallet-truffle-tutorial
 - https://codeburst.io/build-your-first-ethereum-smart-contract-with-solidity-tutorial-94171d6b1c4b
 
-**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
+**A caveat**: the smart contract space, being so new, changes quickly. Solidity syntax features that were new when this article was written may be deprecated or obsoleted by the time you're reading this. Geth versions may have come & go. Solidity is always adding new language features, and deprecating old ones. Many new features are currently in the works. So, be prepared if necessary to adapt the information in this article to the new landscape of the future; if you're serious about learning smart contract development, then I have faith in you. 
 
 
 ### Description of Example App
-TODO: add more about the use case 
-Use case: betting on boxing matches. Users can choose a boxing match, and make a bet on the winner (for simplicity's sake, you just pick the winner, nothing more fancy than that). When the winner is declared, the house (contract owner) takes a predetermined and transparent cut, the losers lose their stake, and the winners split the pot. The amount of the winners' take is determined by the size of their bet. 
+Use case: users bet on boxing matches. 
 
-TODO: maybe remove this part 
+- user can pull a list of bettable boxing matches 
+- user can choose a match, and place a bet on the winner 
+- user can bet any amount above a specified minimum 
+- if user's pick loses, user loses entire amount of bet 
+- if user's pick wins, user gets a portion of the pot based on the size of his/her bet and the total amount bet on the loser of the match, after the house (the contract owner) takes a small percentage of the winnings 
+
 #### Brief Introduction: What is an Oracle?
 
-Smart contracts are a new thing, they've yet to take the mainstream, and so many aspects of how they will work have not yet been hammered out and standardized. I will briefly explain the impetus behind the idea of the "oracle", and - be patient - we'll get into it in more depth in later parts. 
+Smart contracts are still kind of a new thing; they've yet to take the mainstream, and so many aspects of how they will work have not yet been hammered out and standardized. I will briefly explain the impetus behind the idea of the "oracle", and - be patient - we'll get into it in more depth in later parts. 
 
-Programming blockchain contracts is not like programming a client-server app. All data with which the contract interacts, must already be on the blockchain. There is no calling *out* of the blockchain. Not only is it not supported by the language, it's not supported by the blockchain paradigm. The contract can take bets in the form of ethereum currency, store them in the contract, and release them to the correct wallet addresses according to a formula, when the winner of a match is declared. But how does the contract know the winner? It can't query a REST API or anything like that. It can only use data that's already in the blockchain! Many many use cases of smart contracts run into a similar problem - they are seriously limited unless they can interact with the world outside the blockchain. 
+Engineering a blockchain contract is not like programming a client-server app. One important difference is that data with which the contract interacts, must already be on the blockchain. There is no calling *out* of the blockchain. Not only is it not supported by the language, it's not supported by the blockchain paradigm. The contract can take bets in the form of ethereum currency, store them in the contract, and release them to the correct wallet addresses according to a formula, when the winner of a match is declared. But how does the contract know the winner? It can't query a REST API or anything like that. It can only use data that's already in the blockchain! Many many use cases of smart contracts run into a similar problem - they are seriously limited unless they can interact with the world outside the blockchain. 
 
-If the contract can only interact with data on the blockchain, an obvious solution is to inject the necessary data into the blockchain. And that's what an oracle is. An oracle is another contract, which injects data into the blockchain, allowing other contracts to consume it. While that may raise questions about trust and trustlessness, just accept for now that that's what an oracle is. In our example use case, the oracle will be the contract that injects data about boxing matches into the blockchain, and the winners of those matches. 
+If the contract can only interact with data on the blockchain, an obvious solution is to inject the necessary data into the blockchain. And that's what an oracle is. An oracle is another contract, which injects data into the blockchain, allowing other contracts to consume it. While that may raise questions about trust and trustlessness, just accept for now that that's what an oracle is. In part 3 of this series we'll discuss those nuances. In our example use case, the oracle will be the contract that injects data into the blockchain, regarding (a) what matches are available, and (b) who won those matches, once decided.  
 
 ## Setup 
 
@@ -408,7 +414,6 @@ instance.getAllMatches()
 instance.addTestData()
 instance.getAllMatches()
 ```
-TODO: add more tests 
 
 
 ## Testing and Debugging 
@@ -514,4 +519,5 @@ Solo experimentation is a good way to learn. Here are a few simple suggestions i
 - deploy the contracts to ganache (formerly testrpc), and run the same tests to verify function 
 - deploy the contracts to ropsten or rinkeby testnets, and run the same tests to verify function 
 - build a web3js front end for either the oracle, or the client (or both) 
+
 
