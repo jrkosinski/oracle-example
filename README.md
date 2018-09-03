@@ -409,11 +409,16 @@ truffle(develop)> BoxingOracle.deployed().then(inst => { instance = inst })
 Now we can (and should) run a suite of tests on our oracle contract to test it. Try running the following commands, each in turn, and examine the results. 
 
 ```
-instance.testConnection()
-instance.getAllMatches()
-instance.addTestData()
-instance.getAllMatches()
+truffle(develop)> instance.testConnection()
+...
+truffle(develop)> instance.getAllMatches()
+...
+truffle(develop)> instance.addTestData()
+...
+truffle(develop)> instance.getAllMatches()
+...
 ```
+You are encouraged at this point to have a look through the oracle code, see what public methods are available, read the comments in the code, and come up with some of your own tests to run (and run them here in the console, as shown above).
 
 
 ## Testing and Debugging 
@@ -503,6 +508,8 @@ Now, if you take individual addresses from the array returned by *getBettableMat
 
 ... you're getting the individual match details for requested matches (client is on the left, oracle is on the right). 
 
+You are encouraged at this point to have a look through the client code, see what public methods are available, read the comments in the code, and come up with some of your own tests to run (and run them here in the console, as above).
+
 
 ## Conclusion 
 
@@ -520,4 +527,4 @@ Solo experimentation is a good way to learn. Here are a few simple suggestions i
 - deploy the contracts to ropsten or rinkeby testnets, and run the same tests to verify function 
 - build a web3js front end for either the oracle, or the client (or both) 
 
-
+Good luck, and please feel free to contact me with any questions. I can't guarantee a speedy reply necessarily, but I will do my best. 
