@@ -1,7 +1,6 @@
 pragma solidity ^0.4.17;
 
 contract OracleInterface {
-
     enum MatchOutcome {
         Pending,    //match has not been fought to decision
         Underway,   //match has started & is underway
