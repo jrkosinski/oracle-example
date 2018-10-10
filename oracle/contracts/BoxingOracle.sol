@@ -3,34 +3,6 @@ pragma solidity ^0.4.17;
 import "./Ownable.sol";
 import "./DateLib.sol";
 
-/*
-TEST: 
-- testConnection 
-- getAddress
-- matchExists(0) 
-- matchExists(1)
-- declareOutcome(0, 2)
-- getPendingMatches()
-- getAllMatches()
-- getMatch(0)
-- getMostRecentMatch(true)
-- addTestData()
-- matchExists(0) 
-- matchExists(1)
-- declareOutcome(0, 2)
-- getPendingMatches()               
-- getAllMatches()                   
-- getMatch(0)
-- getMostRecentMatch(true)
-- getMostRecentMatch(false) 
-- getMatch(0x...)                   
-- declareOutcome(0x..., 2)              
-- getMostRecentMatch(true)
-- getMostRecentMatch(false)
-- getMatch(0x...)              
-- add duplicate match      
-*/
-
 /// @title BoxingOracle
 /// @author John R. Kosinski
 /// @notice Collects and provides information on boxing matches and their outcomes 
