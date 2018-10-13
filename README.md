@@ -67,10 +67,15 @@ Enums are supported in Solidity:
 
 `
     enum MatchOutcome {
+    
         Pending,    //match has not been fought to decision
+        
         Underway,   //match has started & is underway
+        
         Draw,       //anything other than a clear winner (e.g. cancelled)
+        
         Decided     //index of participant who is the winner 
+        
     }
 `
 
@@ -85,14 +90,23 @@ Structs are another way, like enums, to create a user-defined data type. Structs
 
 `
 //defines a match along with its outcome
+
     struct Match {
+    
         bytes32 id;
+        
         string name;
+        
         string participants;
+        
         uint8 participantCount;
+        
         uint date; 
+        
         MatchOutcome outcome;
+        
         int8 winner;
+        
     }
 `
 
@@ -199,12 +213,19 @@ Consider now, the following definition from line 166:
 
 `
 function getMostRecentMatch(bool _pending) public view returns (
+
         bytes32 id,
+        
         string name, 
+        
         string participants,
+        
         uint8 participantCount,
+        
         uint date, 
+        
         MatchOutcome outcome, 
+        
         int8 winner) { ... }
 `
 
@@ -226,12 +247,18 @@ Alternatively, you can declare the variables explicitly beforehand, with their c
 
 `
 //declare the variables 
+
 bytes32 id; 
+
 string name; 
+
 ... etc... 
+
 int8 winner; 
 
+
 //assign their values 
+
 (id, name, part, count, date, outcome, winner) = getMostRecentMatch(false); 
 `
 
@@ -239,10 +266,14 @@ And now we have declared 7 variables to hold the 7 return values, which we can n
 
 `
 //declare the variables 
+
 bytes32 id; 
+
 uint date;
 
+
 //assign their values 
+
 (id,,,,date,,) = getMostRecentMatch(false); 
 `
 
@@ -254,6 +285,7 @@ Lines 3 and 4 of [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example
 
 `
 import "./Ownable.sol";
+
 import "./DateLib.sol";
 `
 As you probably expect, these are importing definitions from code files that exist in the same contracts project folder as BoxingOracle.sol. 
@@ -281,8 +313,11 @@ Note that, in order to make use of the modifier, we've made *BoxingOracle* inher
 
 `
 modifier onlyOwner() {
+
 	require(msg.sender == owner);
+	
 	_;
+	
 }
 `
 
@@ -297,6 +332,7 @@ We could say it means:
 
 `
 if (msg.send != owner) 
+
 	throw an exception; 
 `
 And in fact, in Solidity 0.4.22 and higher, we can add an error message to that require statement: 
@@ -370,7 +406,8 @@ Algorithm for dividing the winnings:
 - Winnings are awarded upon request by the user 
 - In case of a draw, no one wins - everyone gets their stake back, and the house takes no cut
 
-** Illustration: Architecture & Use Case Diagrams ** 
+
+![architecture](/images/oracle-flow.png)
 
 
 ## BoxingOracle: the Oracle Contract 
@@ -404,6 +441,7 @@ On lines 10 and 11, we declare our storage place for Matches:
 
 `
 	Match[] matches; 
+	
 	mapping(bytes32 => uint) matchIdToIndex; 
 `
 
@@ -413,22 +451,38 @@ On line 17, our Match structure is defined and explained:
 
 `
     //defines a match along with its outcome
+    
     struct Match {
+    
         bytes32 id;             //unique id
+        
         string name;            //human-friendly name (e.g. Jones vs. Holloway)
+        
         string participants;    //a delimited string of participant names
+        
         uint8 participantCount; //number of participants (always 2 for boxing matches!) 
+        
         uint date;              //GMT timestamp of date of contest
+        
         MatchOutcome outcome;   //the outcome (if decided)
+        
         int8 winner;            //index of the participant who is the winner
+        
     }
 
+
     //possible match outcomes 
+    
     enum MatchOutcome {
+    
         Pending,    //match has not been fought to decision
+       
         Underway,   //match has started & is underway
+        
         Draw,       //anything other than a clear winner (e.g. cancelled)
+        
         Decided     //index of participant who is the winner 
+        
     }
 `
 
@@ -482,7 +536,9 @@ Lines 17 and 18 are related to the connection to our oracle. First, in the *boxi
 
 `
     //boxing results oracle 
+    
     address internal boxingOracleAddr = 0;
+    
     OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
 `
 
@@ -536,7 +592,9 @@ Finally, on line 136, we have a testing/debugging helper function that will help
 
 `
     function testOracleConnection() public view returns (bool) {
+    
         return boxingOracle.testConnection(); 
+        
     }
 `
 
