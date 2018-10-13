@@ -66,17 +66,18 @@ While (in my opinion) it's not a good idea to get overly intricate with when str
 Enums are supported in Solidity: 
 
 `
-enum MatchOutcome {    
-  Pending,    //match has not been fought to decision        
-  Underway,   //match has started & is underway        
-  Draw,       //anything other than a clear winner (e.g. cancelled)        
-  Decided     //index of participant who is the winner         
+enum MatchOutcome {
+Pending,    //match has not been fought to decision
+Underway,   //match has started & is underway
+Draw,       //anything other than a clear winner (e.g. cancelled)
+Decided     //index of participant who is the winner
 }
 `
 
 As you'd expect (not different from familiar languages), each enum value is assigned an integer value, beginning with 0. As stated in the Solidity docs, enum values are convertible to all integer types (e.g. uint, uint16, uint32, etc), but implicit conversion is not allowed. Which means that they must be cast explicity (to uint, for example). 
 
 [Solidity Docs: Enums](https://solidity.readthedocs.io/en/develop/types.html#enums)
+
 [Enums Tutorial](https://boostlog.io/@bily809/solidity-tutorial-5-5abf43ed0814730093a2f00e) 
 
 #### Structs 
