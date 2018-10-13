@@ -450,11 +450,13 @@ Line 13 maps a match's unique id, to a list of Bet instances. With this we can, 
 `
 
 Lines 17 and 18 are related to the connection to our oracle. First, in the *boxingOracleAddr* variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in [OracleInterface.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol)) and stores it in a variable. 
+
 `
     //boxing results oracle 
     address internal boxingOracleAddr = 0;
     OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
 `
+
 If you jump ahead to line 58, you'll see the *setOracleAddress* function, in which this oracle address can be changed, and in which the *boxingOracle* instance is re-instantiated with a new address. 
 
 Line 21 defines our minimum bet size, in **wei**. This is of course actually a very small amount, just 0.000001 ether. 
