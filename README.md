@@ -457,8 +457,11 @@ Lines 17 and 18 are related to the connection to our oracle. First, in the *boxi
 `
 If you jump ahead to line 58, you'll see the *setOracleAddress* function, in which this oracle address can be changed, and in which the *boxingOracle* instance is re-instantiated with a new address. 
 
-Line 21 defines our minimum bet size, in wei. This is of course actually a very small amount, just 0.000001 ether. 
-**Illustration: Garth** 
+Line 21 defines our minimum bet size, in **wei**. This is of course actually a very small amount, just 0.000001 ether. 
+
+![wei](/images/nowei.jpg)
+
+
 `
     uint internal minimumBet = 1000000000000;
 ` 
