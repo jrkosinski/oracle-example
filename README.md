@@ -192,6 +192,7 @@ Ok so, let's first just do a quick overview of what's contained here. *function*
 `
 returns (uint)
 `
+
 This says that the function returns a uint (a function that returns void would simply have no *returns* clause here). Why is uint in parentheses? That's because Solidity functions can and often do return *typles*. 
 
 Consider now, the following definition from line 166: 
@@ -206,6 +207,7 @@ function getMostRecentMatch(bool _pending) public view returns (
         MatchOutcome outcome, 
         int8 winner) { ... }
 `
+
 Check out the return clause on this one! It returns one, two... 7 different things. Ok so, this function returns these things as a tuple. Why? In the course of developing, you will often find yourself needing to return a struct (if it was Javascript you'd want to return a json object, probably). Well, as of this writing (in the future this may change) Solidity doesn't support returning structs from public functions. So you have to return tuples instead. If you're a Python guy you may be comfortable with tuples already. Many languages don't really support them though, at least not in this way. 
 
 See line 159 for an example of returning a tuple as a return value: 
