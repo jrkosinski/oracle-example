@@ -30,7 +30,7 @@ pragma solidity >=0.4.16 <0.6.0;
 
 Solidity has many language features that are familiar to most modern programmers, as well as some that are distinct and (to me at least) unusual. It's said to have been inspired by C++, Python and JavaScript - all of which are well familiar to me personally, and yet Solidity seems quite distinct from any of those languages. 
 
-#### contract 
+#### Contract 
 
 The .sol file is the basic unit of code. In [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol), note the 9th line:  
 `
@@ -38,10 +38,6 @@ contract BoxingOracle is Ownable {
 ` 
 
 As the class is the basic unit of logic in object-oriented languages, the contract is the basic unit of logic in Solidity. Suffice it to simplify it for now to say that the contract is the 'class' of Solidity (for object-oriented programmers this is an easy leap). 
-
-#### constructors 
-
-*** NOT DONE *** 
 
 #### Inheritance 
 
@@ -61,7 +57,7 @@ contract Child is ParentA, ParentB, ParentC {
 While (in my opinion) it's not a good idea to get overly intricate with when structuring your inheritance model, here's an interesting article on Solidity in regard to the so-called "Diamond Problem": 
 [https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization](https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization)
 
-#### enums 
+#### Enums 
 
 Enums are supported in Solidity: 
 
@@ -79,7 +75,7 @@ As you'd expect (not different from familiar languages), each enum value is assi
 [Solidity Docs: Enums](https://solidity.readthedocs.io/en/develop/types.html#enums)
 [Enums Tutorial](https://boostlog.io/@bily809/solidity-tutorial-5-5abf43ed0814730093a2f00e) 
 
-#### structs 
+#### Structs 
 
 Structs are another way, like enums, to create a user-defined data type. Structs are familiar to all C/C++ foundation coders and old guys such as myself. An example of a struct, from line 17 of [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol): 
 
@@ -106,7 +102,7 @@ Once created, structs can be addressed in your code as native data types. Here's
 Match match = Match(id, "A vs. B", "A|B", 2, block.timestamp, MatchOutcome.Pending, 1); 
 `
 
-#### data types 
+#### Data Types 
 	
 This brings us to the very basic subject of data types in Solidity. What data types does solidity support? Solidity is statically-typed, and at the time of this writing data types must be explicitly declared and bound to variables. 
 
@@ -126,7 +122,7 @@ Fixed point values are partially supported at this time. According to the Solidi
 
 [https://hackernoon.com/a-note-on-numbers-in-ethereum-and-javascript-3e6ac3b2fad9](https://hackernoon.com/a-note-on-numbers-in-ethereum-and-javascript-3e6ac3b2fad9)
 
-**NOTE**: in most cases, it's better to just use uint, as decreasing the size of the variable (to uint32, for example), can actually increase gas costs rather than decrease them as you might expect. As a general rule of thumb, use uint unless you are certain you have a good reason for doing otherwise. 
+**NOTE**: in most cases, it's best to just use uint, as decreasing the size of the variable (to uint32, for example), can actually increase gas costs rather than decrease them as you might expect. As a general rule of thumb, use uint unless you are certain you have a good reason for doing otherwise. 
 
 ##### String Types 
 
@@ -146,9 +142,9 @@ address internal boxingOracleAddr = 0x145ca3e014aaf5dca488057592ee45305d9b3a22;
 
 [Address Data Types](https://ethereum.stackexchange.com/questions/34024/when-exactly-address-datatype-should-be-used)
 
-##### Date types 
+##### DateTime Types 
 
-There is no native Date type in Solidity per se, as there is in Javascript for example (oh no, Solidity's sounding worse & worse with every paragraph!?). Dates are natively addressed as timestamps of type uint (uint256). They are generally handles as Unix-style timestamps (seconds rather than milliseconds), as the block timestamp is a unix-style timestamp. In cases where you find yourself needing human-readable dates for various reasons, there are open-source libraries available. You might notice that I've used one in BoxingOracle: 
+There is no native Date or DateTime type in Solidity per se, as there is in Javascript for example (oh no, Solidity's sounding worse & worse with every paragraph!?). Dates are natively addressed as timestamps of type uint (uint256). They are generally handles as Unix-style timestamps (seconds rather than milliseconds), as the block timestamp is a unix-style timestamp. In cases where you find yourself needing human-readable dates for various reasons, there are open-source libraries available. You might notice that I've used one in BoxingOracle: 
 [DateLib.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol). OpenZeppelin also has date utilities as well as many other types of general utility libraries (We'll get to the *library* feature of Solidity shortly).
 Pro tip: [OpenZeppelin](https://openzeppelin.org/) is a good source (but of course not the only good source) for both knowldege and pre-written generic code that may help you to build your contracts up. 
 
@@ -239,7 +235,7 @@ uint date;
 
 See what we did there? We got just the two that we were interested in. Check out all of those commas ... we have to count them carefully! 		
 
-#### Import 
+#### Imports 
 
 Lines 3 and 4 of [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol) are imports: 
 
@@ -316,23 +312,214 @@ using DateLib for DateLib.DateTime;
 For a more clear example, check out some of [OpenZeppelin](https://openzeppelin.org/)'s libraries for numbers, such as [SafeMath](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol). These can be applied to native (numeric) Solidity data types (whereas here we've applied a library to a custom data type), and are widely used. 
 
 ## Interfaces 
-*** NOT DONE *** 
+
+As in mainstream object-oriented languages, interfaces are supported. Interfaces in Solidity are defined as contracts, but the function bodies are omitted for the functions. For an example of an interface definition, see [OracleInterface.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol). In this example, the interface is used as a stand-in for the oracle contract, the content of which resides in a separate contract with a separate address. 
 
 ## Naming Conventions 
-*** NOT DONE *** 
 
+Of course, naming conventions are not a global rule; as programmers, we know that we're free to follow the coding and naming conventions that appeal to us. On the other hand, we do want others to feel comfortable reading and working with our code, so some degree of standardization is desirable. 
 
 ## Project Overview
 
 So now that we've gone over some general language features present in the code files in question, we can begin to take a more specific look at the code itself, for this project. 
 
-*** NOT FINISHED *** 
+So, let's clarify the purpose of this project, once again. The purpose of this project is to provide a semi-realistic (or pseudo-realistic) demonstration and example of a smart contract that uses an oracle. At its heart, this is just a contract calling into another separate contract. 
 
-## BoxingBets: the Client Contract 
+The business case of the example can be stated as such: 
+- A user wants to make bets of varying sizes on boxing matches, paying money (ether) for the bets and collecting his/her winnings when and if he/she wins. 
+- A user makes these bets via a smart contract (in a real-life use case, this would be a full DApp with a web3 front end; but we are only examining the contracts side) 
+- A separate smart contract - the oracle - is maintained by a third party. Its job is to maintain a list of boxing matches with their current states (pending, in progress, finished, etc.) and, if finished, the winner. 
+- The main contract gets lists of pending matches from the oracle, and presents these to users as "bettable" matches. 
+- The main contract accepts bets up until the start of a match
+- After a match is decided, the main contract divvies up the winnings and losings according to a simple algorithm, takes a cut for itself, and pays out the winnings upon request (losers simply lose their entire stake). 
+
+The betting rules: 
+- There is a defined, minimum bet (defined in wei) 
+- There is no maximum bet; users can bet any amount that they like, above the minimum
+- Users can place bets up until such time as the match becomes "in progress" 
+
+Algorithm for dividing the winnings: 
+- All bets received are placed into a "pot"
+- A small percentage is removed from the pot, for the house
+- Each winner gets awarded a proportion of the pot, directly proportional to the relative size of their bets
+- Winnings are calculated as soon as the very first user requests the results, after the match is decided
+- Winnings are awarded upon request by the user 
+- In case of a draw, no one wins - everyone gets their stake back, and the house takes no cut
+
+** Illustration: Architecture & Use Case Diagrams ** 
 
 
 ## BoxingOracle: the Oracle Contract 
 
+### Main Functions Provided
+
+The oracle has two interfaces, you could say: one presented to the "owner" and maintainer of the contract, and one presented to the general public; that is, contracts which consume the oracle. The the maintainer, it offers functionality for feeding data into the contract; essentially taking data from the outside world and putting it onto the blockchain. To the public, it offers read-only access to said data. It's important to note that the contract itself restricts non-owners from editing any data, but read-only access to that data is publicly granted without restriction. 
+
+To users: 
+- List all matches 
+- List pending matches 
+- Get details of a specific match 
+- Get status and outcome of a specific match 
+
+To owner: 
+- Enter a match 
+- Change status of match 
+- Set outcome of match 
+
+User story: 
+- A new boxing match is announced and confirmed for May 9th. 
+- I, the contract's maintainer (perhaps I am a well-known sports network or a new outlet), add the upcoming match to the oracle's data on the blockchain, with the status "pending". Anyone or any contract may now query and use this data however they like. 
+- When the match begins, I set the status of that match to "in progress". 
+- When the match ends, I set the status of the match to "completed", and modify the match data to denote the winner. 
+
+### Oracle Code Review 
+
+This review is based entirely on [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol); line numbers reference that file.
+
+On lines 10 and 11, we declare our storage place for Matches: 
+`
+	Match[] matches; 
+	mapping(bytes32 => uint) matchIdToIndex; 
+`
+*matches* is just a simple array for storing Match instances, and the mapping is just a facility for mapping a unique match id (a bytes32 value) to its index in the array. So that if someone hands us a raw id of a match, we can use this mapping to locate it. 
+
+On line 17, our Match structure is defined and explained: 
+`
+    //defines a match along with its outcome
+    struct Match {
+        bytes32 id;             //unique id
+        string name;            //human-friendly name (e.g. Jones vs. Holloway)
+        string participants;    //a delimited string of participant names
+        uint8 participantCount; //number of participants (always 2 for boxing matches!) 
+        uint date;              //GMT timestamp of date of contest
+        MatchOutcome outcome;   //the outcome (if decided)
+        int8 winner;            //index of the participant who is the winner
+    }
+
+    //possible match outcomes 
+    enum MatchOutcome {
+        Pending,    //match has not been fought to decision
+        Underway,   //match has started & is underway
+        Draw,       //anything other than a clear winner (e.g. cancelled)
+        Decided     //index of participant who is the winner 
+    }
+`
+
+Line 61: function *addMatch* is for use only by the contract owner; it allows for the addition of a new match to the stored data. 
+
+Line 80: function *declareOutcome* allows the contract owner to set a match as "decided", setting the participant who won. 
+
+Lines 102-166: the following functions are all callable by the public. This is the read-only data that is open to the public in general: 
+- function *getPendingMatches" returns a list of ids of all matches whose current state is Pending. 
+- function *getAllMatches* returns a list of ids of all matches. 
+- function *getMatch* returns the full details of a single match, specified by id. 
+
+Lines 193-204 declare functions that are mainly for testing, debugging, and diagnostics. 
+- function *testConnection* just tests that we are able to call the contract 
+- function *getAddress* returns the address of this contract 
+- function *addTestData* adds a bunch of test matches to the list of matches 
+
+Feel free to explore around the code a bit before moving on to the next steps. I suggest running the oracle contract again in debug mode (as described in Part 1 of this series), call different functions, and examine the results. 
+
+## BoxingBets: the Client Contract 
+
+It's important to define what the client contract (the betting contract) is responsible for, and what it's not responsible for. The client contract is *not* responsible for maintaining lists of real boxing matches or declaring their outcomes. We "trust" (yes I know, there's that sensitive word - uh oh - we will discuss in Part 3) the oracle for that service. The client contract is responsible for accepting bets. It's responsible for the algorithm that divvies up the winnings, and transfers them to the winners' accounts, based on the outcome of the match (as received from the oracle). 
+
+Furthermore, everything is pull-based, there are no events or pushes. The contract pulls data in from the oracle. The contract pulls the outcome of the match from the oracle (in response to user request), and the contract calculates winnings and transfers them in response to user request. 
+
+### Main Functions Provided
+- List all pending matches 
+- Get details of a specific match 
+- Get status and outcome of a specific match 
+- Place a bet 
+- Request/receive winnings
+
+### Client Code Review 
+
+This review is based entirely on [BoxingBets.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/BoxingBets.sol); line numbers reference that file.
+
+Lines 12 and 13, the first lines of code in the contract, define some mappings in which we'll store our contract's data. 
+Line 12 maps user addresses to lists of ids. This is mapping a user to a list of ids of bets which belong to the user. So, for any given user address, we can quickly get a list of all bets that have been made by that user. 
+`
+    mapping(address => bytes32[]) private userToBets;
+`
+
+Line 13 maps a match's unique id, to a list of Bet instances. With this we can, for any given match, get a list of all bets that have been made for that match. 
+`
+    mapping(bytes32 => Bet[]) private matchToBets;
+`
+
+Lines 17 and 18 are related to the connection to our oracle. First, in the *boxingOracleAddr* variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in [OracleInterface.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol)) and stores it in a variable. 
+`
+    //boxing results oracle 
+    address internal boxingOracleAddr = 0;
+    OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
+`
+If you jump ahead to line 58, you'll see the *setOracleAddress* function, in which this oracle address can be changed, and in which the *boxingOracle* instance is re-instantiated with a new address. 
+
+Line 21 defines our minimum bet size, in wei. This is of course actually a very small amount, just 0.000001 ether. 
+**Illustration: Garth** 
+`
+    uint internal minimumBet = 1000000000000;
+` 
+
+On lines 58 and 66 respectively, we have the *setOracleAddress* and the *getOracleAddress* functions. The *setOracleAddress* has the *onlyOwner* modifier, because only the owner of the contract can switch out the oracle for another oracle (probably not a good idea! but we will discuss in Part 3). The *getOracleAddress* function, on the other hand, is publicly callable; anyone can see what oracle is being used. 
+`
+function setOracleAddress(address _oracleAddress) external onlyOwner returns (bool) {...
+
+function getOracleAddress() external view returns (address) { ....
+`
+
+On lines 72 and 79, we have the *getBettableMatches* and *getMatch* functions, respectively. Note that these are simply forwarding the calls on to the oracle, and returning the result.  
+`
+function getBettableMatches() public view returns (bytes32[]) {...
+
+function getMatch(bytes32 _matchId) public view returns ( ....
+`
+
+The *placeBet* function is a very important one (line 108). 
+`
+function placeBet(bytes32 _matchId, uint8 _chosenWinner) public payable { ...
+`
+A striking feature of this one is the *payable* modifier; we've been so busy discussing general language features that we have not yet touched upon the centrally important feature of being able to send money along with function calls! That's basically what it is - it's a function which can accept an amount of money along with any other arguments and data sent. 
+
+We need this here because this is where the user simultaneously defines what bet they're going to make, how much money they intend to have riding on that bet, and actually send the money. The *payable* modifier enables that. Before accepting the bet, we do a bunch of checks to ensure the validity of the bet. The first check on line 111 is: 
+`
+require(msg.value >= minimumBet, "Bet amount must be >= minimum bet");
+`
+The amount of money sent is stored in *msg.value*. Assuming that all of the checks pass, on line 123 we will transfer that amount into ownership of the oracle, taking ownership of that amount away from the user, and into the contract's possession:
+`
+address(this).transfer(msg.value);
+`
+
+Finally, on line 136, we have a testing/debugging helper function that will help us to know whether or not the contract is connected to a valid oracle: 
+`
+    function testOracleConnection() public view returns (bool) {
+        return boxingOracle.testConnection(); 
+    }
+`
+
 ## Conclusion 
 
+*And this is actually as far as this example goes; just accepting the bet.* The functionality for dividing up the winnings and paying out, as well as some other logic was intentionally left out, in order to keep the example simple enough for our purpose, which is simply to demonstrate the use of an oracle with a contract. That more complete and complex logic exists in another project currently, which is an extension of this example and is still in development. 
+
+So now we have a better understanding of the codebase, and have used it as a vehicle and jumping-off point to discuss some of the language features offered by Solidity. The main purpose of this three-part series is to demonstrate and discuss the use of a contract with an oracle. The purpose of this part is to understand this specific code a little bit better, and to use it as an embarkation point into understanding some features of Solidity and smart contract development. The purpose of the third and final part will be to discuss the strategy and philosophy of oracle usage, and how it fits conceptually into the smart contract model. 
+
+
 ## Further Optional Steps
+
+I would highly encourage readers who wish to learn more, to take this code and play with it. Implement new features. Fix any bugs. Implement un-implemented features (such as the payment interface). Test the function calls. Modify them and retest to see what happens. Add a web3 front end. Add a facility for removing matches, or modifying their outcomes (in case of mistake). What about cancelled matches? Implement a second oracle... of course a contract is free to use as many oracles as it likes, but what problems does that incur? Have fun with it; that's a great way to learn, and when you do it that way (and derive enjoyment from it) you're sure to retain more of what you've learned. 
+
+A sample, non-comprehensive list of things to try: 
+- run both the contract and the oracle in local testnet (in truffle, as described in Part 1) and call all callable functions, and all test functions. 
+- add functionality for calculating the winnings and paying them out, on completion of a match 
+- add functionality for refunding all bets in case of draw 
+- add a feature to request a refund or cancellation a bet, before the match begins 
+- add a feature to allow for the fact that matches can sometimes get cancelled (and everyone will need a refund in that case) 
+- implement a feature to guarantee that the oracle that was in place when a user placed a bet, is the same oracle that will be used to determine the outcome of that match
+- implement another (second) oracle, which has some different features associated with it, or possibly serves a sport other than boxing (note that the participants count and list allows for different types of sports, so we're not actually restricted to just boxing) 
+- implement getMostRecentMatch so that it actually returns either the most recently added match, or the match that's closest to the current date in terms of when it will occur
+- implement exception handling 
+
+Once you're familiar with the mechanics of the relationship between the contract and the oracle, in Part 3 of of this three-part series we will discuss some of the strategic, design, and philosophical issues raised by this example. 
+

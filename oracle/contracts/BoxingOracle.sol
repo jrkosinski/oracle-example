@@ -15,13 +15,13 @@ contract BoxingOracle is Ownable {
 
     //defines a match along with its outcome
     struct Match {
-        bytes32 id;
-        string name;
-        string participants;
-        uint8 participantCount;
-        uint date; 
-        MatchOutcome outcome;
-        int8 winner;
+        bytes32 id;             //unique id
+        string name;            //human-friendly name (e.g. Jones vs. Holloway)
+        string participants;    //a delimited string of participant names
+        uint8 participantCount; //number of participants (always 2 for boxing matches!) 
+        uint date;              //GMT timestamp of date of contest
+        MatchOutcome outcome;   //the outcome (if decided)
+        int8 winner;            //index of the participant who is the winner
     }
 
     //possible match outcomes 
