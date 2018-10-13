@@ -67,15 +67,10 @@ Enums are supported in Solidity:
 
 `
     enum MatchOutcome {    
-    
-        Pending,    //match has not been fought to decision    
-            
+        Pending,    //match has not been fought to decision        
         Underway,   //match has started & is underway        
-        
-        Draw,       //anything other than a clear winner (e.g. cancelled)    
-            
+        Draw,       //anything other than a clear winner (e.g. cancelled)        
         Decided     //index of participant who is the winner         
-        
     }
 `
 
