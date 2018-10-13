@@ -226,6 +226,7 @@ var (id, name, part, count, date, outcome, winner) = getMostRecentMatch(false);
 Alternatively, you can declare the variables explicitly beforehand, with their correct types: 
 
 `
+
 //declare the variables 
 bytes32 id; 
 string name; 
