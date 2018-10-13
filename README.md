@@ -66,16 +66,11 @@ While (in my opinion) it's not a good idea to get overly intricate with when str
 Enums are supported in Solidity: 
 
 `
-    enum MatchOutcome {
-    
-        Pending,    //match has not been fought to decision
-        
-        Underway,   //match has started & is underway
-        
-        Draw,       //anything other than a clear winner (e.g. cancelled)
-        
-        Decided     //index of participant who is the winner 
-        
+    enum MatchOutcome {    
+        Pending,    //match has not been fought to decision        
+        Underway,   //match has started & is underway        
+        Draw,       //anything other than a clear winner (e.g. cancelled)        
+        Decided     //index of participant who is the winner         
     }
 `
 
@@ -90,23 +85,14 @@ Structs are another way, like enums, to create a user-defined data type. Structs
 
 `
 //defines a match along with its outcome
-
-    struct Match {
-    
-        bytes32 id;
-        
-        string name;
-        
-        string participants;
-        
-        uint8 participantCount;
-        
-        uint date; 
-        
-        MatchOutcome outcome;
-        
-        int8 winner;
-        
+    struct Match {    
+        bytes32 id;        
+        string name;        
+        string participants;        
+        uint8 participantCount;        
+        uint date;         
+        MatchOutcome outcome;        
+        int8 winner;        
     }
 `
 
@@ -213,19 +199,12 @@ Consider now, the following definition from line 166:
 
 `
 function getMostRecentMatch(bool _pending) public view returns (
-
-        bytes32 id,
-        
-        string name, 
-        
-        string participants,
-        
-        uint8 participantCount,
-        
-        uint date, 
-        
-        MatchOutcome outcome, 
-        
+        bytes32 id,        
+        string name,         
+        string participants,        
+        uint8 participantCount,        
+        uint date,         
+        MatchOutcome outcome,         
         int8 winner) { ... }
 `
 
@@ -247,18 +226,14 @@ Alternatively, you can declare the variables explicitly beforehand, with their c
 
 `
 //declare the variables 
-
 bytes32 id; 
-
 string name; 
 
 ... etc... 
 
 int8 winner; 
 
-
 //assign their values 
-
 (id, name, part, count, date, outcome, winner) = getMostRecentMatch(false); 
 `
 
@@ -266,14 +241,10 @@ And now we have declared 7 variables to hold the 7 return values, which we can n
 
 `
 //declare the variables 
-
 bytes32 id; 
-
 uint date;
 
-
 //assign their values 
-
 (id,,,,date,,) = getMostRecentMatch(false); 
 `
 
@@ -285,7 +256,6 @@ Lines 3 and 4 of [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example
 
 `
 import "./Ownable.sol";
-
 import "./DateLib.sol";
 `
 As you probably expect, these are importing definitions from code files that exist in the same contracts project folder as BoxingOracle.sol. 
@@ -302,6 +272,7 @@ Finally, what I really want to discuss, are custom modifiers. Have a look at lin
 `
 function addMatch(string _name, string _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {
 `
+
 Note the *onlyOwner* modifier just before the "public" keyword. This indicates that *only the owner* of the contract may call this method! While very important, this is not a native feature of Solidity (though maybe it will be in the future). Actually, "onlyOwner" is an example of a custom modifier that we create ourselves, and use. Let's have a look. 
 
 First, the modifier is defined in the file [Ownable.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol), which you can see we have imported on line 3 of [BoxingOracle.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol): 
@@ -309,15 +280,13 @@ First, the modifier is defined in the file [Ownable.sol](https://github.com/jrko
 `
 import "./Ownable.sol"
 `
+
 Note that, in order to make use of the modifier, we've made *BoxingOracle* inherit from *Ownable*. Inside of [Ownable.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol), on line 25, we can find the definition for the modifier inside of the *Ownable* contract: 
 
 `
 modifier onlyOwner() {
-
 	require(msg.sender == owner);
-	
 	_;
-	
 }
 `
 
@@ -328,13 +297,14 @@ Note that this thing is declared as a modifier, indicating that we can use it as
 `
 require(msg.sender == owner);
 `
+
 We could say it means: 
 
 `
 if (msg.send != owner) 
-
 	throw an exception; 
 `
+
 And in fact, in Solidity 0.4.22 and higher, we can add an error message to that require statement: 
 
 `
@@ -346,6 +316,7 @@ Finally, in the curious-looking line:
 `
 _; 
 `
+
 ... the underscore is short-hand for "here execute the full content of the modified function". So in effect, the require statement will be executed first, followed by the actual function. So it's like pre-pending this line of logic to the modified function. 
 
 There are of course more things that you can do with modifiers. Check the docs: [Docs](https://solidity.readthedocs.io/en/v0.4.24/common-patterns.html) 
@@ -441,7 +412,6 @@ On lines 10 and 11, we declare our storage place for Matches:
 
 `
 	Match[] matches; 
-	
 	mapping(bytes32 => uint) matchIdToIndex; 
 `
 
@@ -451,38 +421,22 @@ On line 17, our Match structure is defined and explained:
 
 `
     //defines a match along with its outcome
-    
     struct Match {
-    
         bytes32 id;             //unique id
-        
         string name;            //human-friendly name (e.g. Jones vs. Holloway)
-        
         string participants;    //a delimited string of participant names
-        
         uint8 participantCount; //number of participants (always 2 for boxing matches!) 
-        
         uint date;              //GMT timestamp of date of contest
-        
         MatchOutcome outcome;   //the outcome (if decided)
-        
         int8 winner;            //index of the participant who is the winner
-        
     }
 
-
     //possible match outcomes 
-    
-    enum MatchOutcome {
-    
-        Pending,    //match has not been fought to decision
-       
-        Underway,   //match has started & is underway
-        
-        Draw,       //anything other than a clear winner (e.g. cancelled)
-        
-        Decided     //index of participant who is the winner 
-        
+    enum MatchOutcome {    
+        Pending,    //match has not been fought to decision       
+        Underway,   //match has started & is underway        
+        Draw,       //anything other than a clear winner (e.g. cancelled)        
+        Decided     //index of participant who is the winner         
     }
 `
 
@@ -535,10 +489,8 @@ Line 13 maps a match's unique id, to a list of Bet instances. With this we can, 
 Lines 17 and 18 are related to the connection to our oracle. First, in the *boxingOracleAddr* variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in [OracleInterface.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol)) and stores it in a variable. 
 
 `
-    //boxing results oracle 
-    
-    address internal boxingOracleAddr = 0;
-    
+    //boxing results oracle     
+    address internal boxingOracleAddr = 0;    
     OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr); 
 `
 
@@ -591,10 +543,8 @@ address(this).transfer(msg.value);
 Finally, on line 136, we have a testing/debugging helper function that will help us to know whether or not the contract is connected to a valid oracle: 
 
 `
-    function testOracleConnection() public view returns (bool) {
-    
-        return boxingOracle.testConnection(); 
-        
+    function testOracleConnection() public view returns (bool) {    
+        return boxingOracle.testConnection();         
     }
 `
 
