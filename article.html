@@ -1,0 +1,1175 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-FCg44VGg5ax/5MpZ8otwiPE+/tG1/Sq67mKkl6agbqgoScZtJyXhQSFQMIJfOHMZZ+yXDINb8nEiws60SiLohg==" rel="stylesheet" href="https://assets-cdn.github.com/assets/frameworks-5aa6d9885579bb2359f66266aee26f3b.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-+/hqp+gOyKak+oOrmncIDqvw8rgk69e9HtwA/O+2PG25IJgS6L+sciem4Dqu4L77m8UaEYWxYhXeRhxzzaDk3Q==" rel="stylesheet" href="https://assets-cdn.github.com/assets/github-2bf9c5ab90af2104656120603fa7ae6a.css" />
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>oracle-example/README.md at part2-step1 · jrkosinski/oracle-example</title>
+    <meta name="description" content="Example of an ethereum smart contract with oracle. Contribute to jrkosinski/oracle-example development by creating an account on GitHub.">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/2518582?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="jrkosinski/oracle-example" /><meta property="og:url" content="https://github.com/jrkosinski/oracle-example" /><meta property="og:description" content="Example of an ethereum smart contract with oracle. Contribute to jrkosinski/oracle-example development by creating an account on GitHub." />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzE2MTE4NTM1Ojg3ZGVkNmUzNDYwNWQxZjA5ZDhjYjBmODJiM2U1NGM1Y2VjNWE2M2NkNWFhYzRjNzJjNTY1YzFkYjA2YTU4ZjE=--d953130b6d1311ed05c031fd92a1620de6ddbf45">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="97B0:67BD:6CAA4D:BF4E5D:5BC21141" data-pjax-transient>
+
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="97B0:67BD:6CAA4D:BF4E5D:5BC21141" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="2518582" /><meta name="octolytics-actor-login" content="jrkosinski" /><meta name="octolytics-actor-hash" content="3331cd70aacd60490cb1e04def49ae4df261c119e46338e8678d76357781158a" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="5e5ac1ab4baba2216e12d07d18466c1a" %>
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="jrkosinski">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="OWY5NTNkYTkxNTBhMGI1NzlhMzFmMmRmNzZkMWQwNmUwZWZjOGM1MDA2ZGY4ZmRmMjIwNDdjOTFlOWZkMGY0N3x7InJlbW90ZV9hZGRyZXNzIjoiMTI0LjEyMS4yMTEuNTAiLCJyZXF1ZXN0X2lkIjoiOTdCMDo2N0JEOjZDQUE0RDpCRjRFNUQ6NUJDMjExNDEiLCJ0aW1lc3RhbXAiOjE1Mzk0NDUxMDIsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,NOTIFY_ON_BLOCK,COLLAPSE_REPEATED_COMMENTS,ISSUE_AND_PR_HOVERCARDS">
+
+  <meta name="html-safe-nonce" content="46b303bca7b03ae0ee402d450b7234e24902c9c7">
+
+  <meta http-equiv="x-pjax-version" content="2445a9d8f1e3921e095f7142cee041b8">
+  
+
+      <link href="https://github.com/jrkosinski/oracle-example/commits/part2-step1.atom" rel="alternate" title="Recent Commits to oracle-example:part2-step1" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/jrkosinski/oracle-example git https://github.com/jrkosinski/oracle-example.git">
+
+  <meta name="octolytics-dimension-user_id" content="2518582" /><meta name="octolytics-dimension-user_login" content="jrkosinski" /><meta name="octolytics-dimension-repository_id" content="146542432" /><meta name="octolytics-dimension-repository_nwo" content="jrkosinski/oracle-example" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="146542432" /><meta name="octolytics-dimension-repository_network_root_nwo" content="jrkosinski/oracle-example" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="true" />
+
+
+    <link rel="canonical" href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/README.md" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+  <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production page-blob">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        
+<header class="Header  f5" role="banner">
+  <div class="d-flex flex-justify-between px-3 container-lg">
+    <div class="d-flex flex-justify-between ">
+      <div class="">
+        <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+      </div>
+
+    </div>
+
+    <div class="HeaderMenu d-flex flex-justify-between flex-auto">
+      <div class="d-flex">
+            <div class="">
+              <div class="header-search scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+  role="combobox"
+  aria-owns="jump-to-results"
+  aria-label="Search or jump to"
+  aria-haspopup="listbox"
+  aria-expanded="false"
+>
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="146542432" data-scoped-search-url="/jrkosinski/oracle-example/search" data-unscoped-search-url="/search" action="/jrkosinski/oracle-example/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <label class="form-control header-search-wrapper header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text"
+          class="form-control header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+          data-hotkey="s,/"
+          name="q"
+          value=""
+          placeholder="Search or jump to…"
+          data-unscoped-placeholder="Search or jump to…"
+          data-scoped-placeholder="Search or jump to…"
+          autocapitalize="off"
+          aria-autocomplete="list"
+          aria-controls="jump-to-results"
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=qQVi7TbiTjERBdZhLYnnJVKJxQ/Rf4mKQIPldS52DzYkIfpMCkOlDd3v+4bDuhbleocOSLRJAPo0l4SY2DTLOg=="
+          spellcheck="false"
+          autocomplete="off"
+          >
+          <input type="hidden" class="js-site-search-type-field" name="type" >
+            <img src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              <ul class="d-none js-jump-to-suggestions-template-container">
+                <li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item" role="option">
+                  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center p-2 jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open" href="">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+                      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+                      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+                      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+                    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+                        In this repository
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <ul class="d-none js-jump-to-no-results-template-container">
+                <li class="d-flex flex-justify-center flex-items-center p-3 f5 d-none">
+                  <span class="text-gray">No suggested jump to results</span>
+                </li>
+              </ul>
+
+              <ul id="jump-to-results" role="listbox" class="js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container" >
+                <li class="d-flex flex-justify-center flex-items-center p-0 f5">
+                  <img src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+                </li>
+              </ul>
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+            </div>
+
+          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation">
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+                Pull requests
+</a>            </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
+                Issues
+</a>            </li>
+              <li class="position-relative">
+                <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="/marketplace">
+                   Marketplace
+</a>                  
+              </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
+                Explore
+</a>            </li>
+          </ul>
+      </div>
+
+      <div class="d-flex">
+        
+<ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
+  <li class="dropdown">
+    <span class="d-inline-block  px-2">
+      
+    <a aria-label="You have unread notifications" class="notification-indicator tooltipped tooltipped-s  js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:unread" data-channel="notification-changed:2518582" href="/notifications">
+        <span class="mail-status unread"></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.99 11.991v1H0v-1l.73-.58c.769-.769.809-2.547 1.189-4.416.77-3.767 4.077-4.996 4.077-4.996 0-.55.45-1 .999-1 .55 0 1 .45 1 1 0 0 3.387 1.229 4.156 4.996.38 1.879.42 3.657 1.19 4.417l.659.58h-.01zM6.995 15.99c1.11 0 1.999-.89 1.999-1.999H4.996c0 1.11.89 1.999 1.999 1.999z"/></svg>
+</a>
+    </span>
+  </li>
+
+  <li class="dropdown">
+    <details class="details-overlay details-reset d-flex px-2 flex-items-center">
+      <summary class="HeaderNavlink"
+         aria-label="Create new…"
+         data-ga-click="Header, create new, icon:add">
+        <svg class="octicon octicon-plus float-left mr-1 mt-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
+        <span class="dropdown-caret mt-1"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw">
+        
+<a role="menuitem" class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="jrkosinski/oracle-example">This repository</span>
+  </div>
+    <a role="menuitem" class="dropdown-item" href="/jrkosinski/oracle-example/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+
+      </details-menu>
+    </details>
+  </li>
+
+  <li class="dropdown">
+
+    <details class="details-overlay details-reset d-flex pl-2 flex-items-center">
+      <summary class="HeaderNavlink name mt-1"
+        aria-label="View profile and more"
+        data-ga-click="Header, show menu, icon:avatar">
+        <img alt="@jrkosinski" class="avatar float-left mr-1" src="https://avatars3.githubusercontent.com/u/2518582?s=40&amp;v=4" height="20" width="20">
+        <span class="dropdown-caret"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw">
+        <ul>
+          <li class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="/jrkosinski" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">jrkosinski</strong></a></li>
+          <li class="dropdown-divider"></li>
+          <li><a role="menuitem" class="dropdown-item" href="/jrkosinski" data-ga-click="Header, go to profile, text:your profile">Your profile</a></li>
+          <li><a role="menuitem" class="dropdown-item" href="/jrkosinski?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a></li>
+
+
+          <li><a role="menuitem" class="dropdown-item" href="/jrkosinski?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a></li>
+            <li><a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists">Your gists</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
+          <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
+          <li>
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="i5c7iShn5aZ4sJofrVRTWkxbVHLwDJwThi94FBy81nsBaGzSGsMoM7yMMtstfWwr79GYeUsuoQnl9FMmOHL44w==" />
+              <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+                Sign out
+              </button>
+</form>          </li>
+        </ul>
+      </details-menu>
+    </details>
+  </li>
+</ul>
+
+
+
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9s0LSjcnNBRQsXwtzHV9H8QVTsv3JhXIQkfpLhFKAPx8MlwRBYP5gZSN1OlMXEJuZ5+CwEwEKNIhnMIcNYQuZA==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </div>
+</header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+
+
+</div>
+
+
+
+  <div role="main" class="application-main ">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container >
+      
+
+
+
+
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="I6MuOvqO94Iml5O3gL/rzqphUKWt1VvVqQtFXElFz+A1EzAEVPxg7OzACM87vxkk5IKpFcyuoOWJ5T6Y6YosrA==" />      <input type="hidden" name="repository_id" id="repository_id" value="146542432" class="form-control" />
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="btn btn-sm btn-with-count select-menu-button" data-ga-click="Repository, click Watch settings, action:blob#show">
+          <span data-menu-button>
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+              Unwatch
+          </span>
+        </summary>
+        <details-menu class="select-menu-modal position-absolute mt-5" style="z-index: 99;">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+      <a class="social-count js-social-count"
+        href="/jrkosinski/oracle-example/watchers"
+        aria-label="1 user is watching this repository">
+        1
+      </a>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/jrkosinski/oracle-example/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CMQOay49sWDBPgugQzUasu2zUVpHMuO5brLgn5sda7KioH2IX/LJR6QHlOW1RBlCFLKLjJM3gVpwwA21a3ZVOA==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar jrkosinski/oracle-example"
+        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/jrkosinski/oracle-example/stargazers"
+           aria-label="0 users starred this repository">
+          0
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/jrkosinski/oracle-example/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="71SLLpmVTNE8zsjcQwcxJPtG+vIRC8EcahzmUaOSatwd8T81xlWZQLPS+4NRWmPfl+mQy8kiBOG7lLp+NdLyhg==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star jrkosinski/oracle-example"
+        data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/jrkosinski/oracle-example/stargazers"
+           aria-label="0 users starred this repository">
+          0
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left"
+            data-deferred-details-content-url="/jrkosinski/oracle-example/fork?fragment=1">
+            <summary class="btn btn-sm btn-with-count"
+              title="Fork your own copy of jrkosinski/oracle-example to your account"
+              data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
+              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              Fork
+            </summary>
+            <details-dialog class="anim-fade-in fast Box Box--overlay d-flex flex-column">
+              <div class="Box-header">
+                <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
+                  <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+                </button>
+                <h3 class="Box-title">Where should we fork this repository?</h3>
+              </div>
+              <div class="Box-body overflow-auto text-center">
+                <include-fragment>
+                  <div class="octocat-spinner my-3" aria-label="Loading..."></div>
+                  <p class="f5 text-gray">If this dialog fails to load, you can visit <a href="/jrkosinski/oracle-example/fork">the fork page</a> directly.</p>
+                </include-fragment>
+              </div>
+            </details-dialog>
+          </details>
+
+    <a href="/jrkosinski/oracle-example/network/members" class="social-count"
+       aria-label="0 users forked this repository">
+      0
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" href="/jrkosinski">jrkosinski</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/jrkosinski/oracle-example">oracle-example</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /jrkosinski/oracle-example/tree/part2-step1" href="/jrkosinski/oracle-example/tree/part2-step1">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /jrkosinski/oracle-example/issues" href="/jrkosinski/oracle-example/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">0</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /jrkosinski/oracle-example/pulls" href="/jrkosinski/oracle-example/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /jrkosinski/oracle-example/projects" href="/jrkosinski/oracle-example/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+
+    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /jrkosinski/oracle-example/wiki" href="/jrkosinski/oracle-example/wiki">
+      <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse alerts /jrkosinski/oracle-example/pulse" href="/jrkosinski/oracle-example/pulse">
+    <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_settings repo_branch_settings hooks integration_installations repo_keys_settings issue_template_editor /jrkosinski/oracle-example/settings" href="/jrkosinski/oracle-example/settings">
+      <svg class="octicon octicon-gear" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+      Settings
+</a>
+</nav>
+
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+
+  
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/jrkosinski/oracle-example/blob/8cfa7ad040b3b8823a981d8eee1dd87e9f85635a/README.md">Permalink</a>
+
+    <!-- blob contrib key: blob_contributors:v21:548a140b14282c56ef9584dd3731da8d -->
+
+    
+
+    <div class="file-navigation">
+      
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">part2-step1</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Find or create a branch…" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Find or create a branch…">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Find or create a branch…" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/jrkosinski/oracle-example/blob/master/README.md"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/jrkosinski/oracle-example/blob/part1-step1/README.md"
+               data-name="part1-step1"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                part1-step1
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/jrkosinski/oracle-example/blob/part1-step2/README.md"
+               data-name="part1-step2"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                part1-step2
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/jrkosinski/oracle-example/blob/part2-step1/README.md"
+               data-name="part2-step1"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                part2-step1
+              </span>
+            </a>
+        </div>
+
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="select-menu-new-item-form js-new-item-form" action="/jrkosinski/oracle-example/branches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="LWEFaGLRQz6m8h/LjBtoGAhfzvP7x3mVHcAD969A/HCmn8N40IxBLQvUoGOm+PptelJ3AnKyYRFFWslO6ERKKQ==" />
+            <input type="hidden" name="name" id="name" class="js-new-item-value">
+            <input type="hidden" name="branch" id="branch" value="part2-step1">
+            <input type="hidden" name="path" id="path" value="README.md">
+
+            <button type="submit" class="width-full select-menu-item js-navigation-open js-navigation-item">
+              <svg class="octicon octicon-git-branch select-menu-item-icon" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
+                <span class="description">from ‘part2-step1’</span>
+              </div>
+            </button>
+</form>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <div class="BtnGroup float-right">
+        <a href="/jrkosinski/oracle-example/find/part2-step1"
+              class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+              data-pjax
+              data-hotkey="t">
+          Find file
+        </a>
+        <clipboard-copy for="blob-path" class="btn btn-sm BtnGroup-item">
+          Copy path
+        </clipboard-copy>
+      </div>
+      <div id="blob-path" class="breadcrumb">
+        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/jrkosinski/oracle-example/tree/part2-step1"><span>oracle-example</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong>
+      </div>
+    </div>
+
+
+    
+  <div class="commit-tease">
+      <span class="float-right">
+        <a class="commit-tease-sha" href="/jrkosinski/oracle-example/commit/d35670ae3bbde7d2d9bec3211f0e8d35328fdea4" data-pjax>
+          d35670a
+        </a>
+        <relative-time datetime="2018-10-13T15:35:38Z">Oct 13, 2018</relative-time>
+      </span>
+      <div>
+        <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=2518582" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/jrkosinski"><img class="avatar" src="https://avatars3.githubusercontent.com/u/2518582?s=40&amp;v=4" width="20" height="20" alt="@jrkosinski" /></a>
+        <a class="user-mention" rel="author" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=2518582" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/jrkosinski">jrkosinski</a>
+          <a data-pjax="true" title="code formatting" class="message" href="/jrkosinski/oracle-example/commit/d35670ae3bbde7d2d9bec3211f0e8d35328fdea4">code formatting</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      
+<details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
+  <summary class="btn-link" aria-haspopup="dialog"  >
+    
+    <span><strong>1</strong> contributor</span>
+  </summary>
+  <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast " aria-label="Users who have contributed to this file">
+    <div class="Box-header">
+      <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+      </button>
+      <h3 class="Box-title">Users who have contributed to this file</h3>
+    </div>
+    
+        <ul class="list-style-none overflow-auto">
+            <li class="Box-row">
+              <a class="link-gray-dark no-underline" href="/jrkosinski">
+                <img class="avatar mr-2" alt="" src="https://avatars3.githubusercontent.com/u/2518582?s=40&amp;v=4" width="20" height="20" />
+                jrkosinski
+</a>            </li>
+        </ul>
+
+  </details-dialog>
+</details>
+      
+    </div>
+  </div>
+
+
+
+    <div class="file ">
+      <div class="file-header">
+  <div class="file-actions">
+
+    <div class="BtnGroup">
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/jrkosinski/oracle-example/raw/part2-step1/README.md">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/jrkosinski/oracle-example/blame/part2-step1/README.md">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/jrkosinski/oracle-example/commits/part2-step1/README.md">History</a>
+    </div>
+
+
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/jrkosinski/oracle-example/edit/part2-step1/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="yIwKZ6xcL+gT77erFCzocXo9PVTYFq3alq8H4Bgk9/xy3nAoXkZuGd1PIuqAXg11EHzZ8uWZpOsgVKTaI+fmdA==" />
+            <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+              aria-label="Edit this file" data-hotkey="e" data-disable-with>
+              <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+            </button>
+</form>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/jrkosinski/oracle-example/delete/part2-step1/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="T0AbfyJ2Czqgayh0q5l96lH+ndy3p0wyVIZAyBhaenf7ZIuROtcAVogWHrdO84mW8t7abAvSfW8A/UC1Qm1SIg==" />
+          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
+            aria-label="Delete this file" data-disable-with>
+            <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+          </button>
+</form>  </div>
+
+  <div class="file-info">
+      576 lines (381 sloc)
+      <span class="file-info-divider"></span>
+    35.4 KB
+  </div>
+</div>
+
+      
+  <div id="readme" class="readme blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-eth-smart-contract-oracles-part-2-solidity-code-features" class="anchor" aria-hidden="true" href="#eth-smart-contract-oracles-part-2-solidity-code-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ETH Smart Contract Oracles Part 2: Solidity Code Features</h1>
+<h2><a id="user-content-intro" class="anchor" aria-hidden="true" href="#intro"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Intro</h2>
+<p>In the last (1st) segment of this three-parter, we went through a little tutorial that gave us a simple contract-with-oracle pair. The mechanisms and processes of getting set up (with truffle), compiling the code, deploying to a test network, running and debugging was described; however many of the details of the code were glossed over in a hand-wavy manner. So now as promised, we'll get into looking at some of those language features which are unique to Solidity smart contract development, and unique to this particular contract-oracle scenario. While we can't painstakingly look at every single detail (I will leave that to you in your further studies, if you wish), we will try to hit upon the most striking, most interesting, and most important features of the code.</p>
+<p>In order to facilitate this, I recommend that you open up either your own version of the project (if you have one), or have the code handy for reference. The full code at this point can be found here:
+<a href="https://github.com/jrkosinski/oracle-example/tree/part2-step1">https://github.com/jrkosinski/oracle-example/tree/part2-step1</a></p>
+<h2><a id="user-content-solidity" class="anchor" aria-hidden="true" href="#solidity"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solidity</h2>
+<p>Solidity is not the only smart contract development language available, but I think it's safe enough to say that it's the most common and most popular in general, for Ethereum smart contracts. Certainly it's the one that has the most popular support and information, at the time of this writing. Solidity is object-oriented and Turing-complete. That said, you will quickly realize its built-in (and fully intentional) limitations, which make smart contract programming feel quite different from ordinary let's-do-this-thing hacking.</p>
+<h3><a id="user-content-solidity-version" class="anchor" aria-hidden="true" href="#solidity-version"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Solidity Version</h3>
+<p>The first line of every Solidity code poem:</p>
+<p><code>pragma solidity ^0.4.17;</code></p>
+<p>The version numbers that you see are going to differ, as Solidity, still in its youth, is changing quickly. 0.4.17 is the version that I've used in my examples; latest version at time of this writing is 0.4.25. The latest version at this time you're reading this may well be something different. Many nice features are in the works (or at least planned) for Solidity, which we will discuss presently.</p>
+<p><a href="https://github.com/ethereum/solidity/releases">Solidity versions</a></p>
+<p>Pro tip: you can also specify a range of versions (though I don't see this done too often), like so:</p>
+<p><code>pragma solidity &gt;=0.4.16 &lt;0.6.0;</code></p>
+<h3><a id="user-content-language-features" class="anchor" aria-hidden="true" href="#language-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language Features</h3>
+<p>Solidity has many language features that are familiar to most modern programmers, as well as some that are distinct and (to me at least) unusual. It's said to have been inspired by C++, Python and JavaScript - all of which are well familiar to me personally, and yet Solidity seems quite distinct from any of those languages.</p>
+<h4><a id="user-content-contract" class="anchor" aria-hidden="true" href="#contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contract</h4>
+<p>The .sol file is the basic unit of code. In <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>, note the 9th line:</p>
+<p><code>contract BoxingOracle is Ownable {</code></p>
+<p>As the class is the basic unit of logic in object-oriented languages, the contract is the basic unit of logic in Solidity. Suffice it to simplify it for now to say that the contract is the 'class' of Solidity (for object-oriented programmers this is an easy leap).</p>
+<h4><a id="user-content-inheritance" class="anchor" aria-hidden="true" href="#inheritance"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inheritance</h4>
+<p>Solidity contracts fully support inheritance, and it works as you'd expect; private contract members are not inherited, whereas protected and public ones are. Overloading and polymorphism are supported as you'd expect.</p>
+<p><code>contract BoxingOracle is Ownable {</code></p>
+<p>In the above statement, the "is" keyword is denoting inheritance. BoxingOracle inherits from Ownable. Multiple inheritance is also supported in Solidity. Multiple inheritance is indicated by a comma-delimited list of class names, like so:</p>
+<p><code>contract Child is ParentA, ParentB, ParentC { ...</code></p>
+<p>While (in my opinion) it's not a good idea to get overly intricate with when structuring your inheritance model, here's an interesting article on Solidity in regard to the so-called "Diamond Problem":
+<a href="https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization" rel="nofollow">https://ethereum.stackexchange.com/questions/21060/multiple-inheritance-and-linearization</a></p>
+<h4><a id="user-content-enums" class="anchor" aria-hidden="true" href="#enums"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enums</h4>
+<p>Enums are supported in Solidity:</p>
+<p><code>enum MatchOutcome { Pending, //match has not been fought to decision Underway, //match has started &amp; is underway Draw, //anything other than a clear winner (e.g. cancelled) Decided //index of participant who is the winner }</code></p>
+<p>As you'd expect (not different from familiar languages), each enum value is assigned an integer value, beginning with 0. As stated in the Solidity docs, enum values are convertible to all integer types (e.g. uint, uint16, uint32, etc), but implicit conversion is not allowed. Which means that they must be cast explicity (to uint, for example).</p>
+<p><a href="https://solidity.readthedocs.io/en/develop/types.html#enums" rel="nofollow">Solidity Docs: Enums</a></p>
+<p><a href="https://boostlog.io/@bily809/solidity-tutorial-5-5abf43ed0814730093a2f00e" rel="nofollow">Enums Tutorial</a></p>
+<h4><a id="user-content-structs" class="anchor" aria-hidden="true" href="#structs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structs</h4>
+<p>Structs are another way, like enums, to create a user-defined data type. Structs are familiar to all C/C++ foundation coders and old guys such as myself. An example of a struct, from line 17 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
+<p><code>//defines a match along with its outcome struct Match { bytes32 id; string name; string participants; uint8 participantCount; uint date; MatchOutcome outcome; int8 winner; }</code></p>
+<p>Note to all old C programmers: struct "packing" in Solidity is a thing, but there are some rules and caveats. Don't necessarily assume that it works the same as in C; check the docs and be aware of your situation, to ascertain whether or not packing is going to help you in a given case.</p>
+<p><a href="https://solidity.readthedocs.io/en/v0.4.21/miscellaneous.html" rel="nofollow">Solidity Struct Packing</a></p>
+<p>Once created, structs can be addressed in your code as native data types. Here's an example of the syntax for 'instantiation' of the struct type created above:</p>
+<p><code>Match match = Match(id, "A vs. B", "A|B", 2, block.timestamp, MatchOutcome.Pending, 1);</code></p>
+<h4><a id="user-content-data-types" class="anchor" aria-hidden="true" href="#data-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Types</h4>
+<p>This brings us to the very basic subject of data types in Solidity. What data types does solidity support? Solidity is statically-typed, and at the time of this writing data types must be explicitly declared and bound to variables.</p>
+<p><a href="https://solidity.readthedocs.io/en/v0.4.24/types.html" rel="nofollow">Solidity Data Types</a></p>
+<h5><a id="user-content-booleans" class="anchor" aria-hidden="true" href="#booleans"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Booleans</h5>
+<p>Boolean types are supported under the name <em>bool</em> and values <em>true</em> or <em>false</em></p>
+<h5><a id="user-content-numeric-types" class="anchor" aria-hidden="true" href="#numeric-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Numeric types</h5>
+<p>Integer types are supported, both signed and unsigned, from int8/uint8 to int256/uint256 (that's 8-bit integers to 256-bit integers, respectively). The type uint is shorthand for uint256 (and likewise int is short for int256).</p>
+<p>Notably, floating-point types are <em>not</em> supported. Why not? Well, for one thing, when dealing with monetary values, floating-point variables are well known to be a bad idea (in general of course), because value can be lost into thin air. Ether values are denoted in wei, which is 1/1000000000000000000th of an ether, and that must be enough precision for all purposes; you cannot break an ether down into smaller parts.</p>
+<p>Fixed point values are partially supported at this time. According to the Solidity docs: <em>Fixed point numbers are not fully supported by Solidity yet. They can be declared, but cannot be assigned to or from.</em></p>
+<p><a href="https://hackernoon.com/a-note-on-numbers-in-ethereum-and-javascript-3e6ac3b2fad9" rel="nofollow">https://hackernoon.com/a-note-on-numbers-in-ethereum-and-javascript-3e6ac3b2fad9</a></p>
+<p><strong>NOTE</strong>: in most cases, it's best to just use uint, as decreasing the size of the variable (to uint32, for example), can actually increase gas costs rather than decrease them as you might expect. As a general rule of thumb, use uint unless you are certain you have a good reason for doing otherwise.</p>
+<h5><a id="user-content-string-types" class="anchor" aria-hidden="true" href="#string-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>String Types</h5>
+<p>The string data type in Solidity is a funny subject; you may get different opinions depending on who you talk to. There is a string data type in Solidity, that is a fact. My opinion, probably shared by most, is that it doesn't offer much functionality. String parsing, concatenation, replace, trim, even counting the length of the string: all of those things you've likely come to expect from a string type are not present, and so are your responsibility (if you need them). Some people use bytes32 in place of string; that can be done as well.</p>
+<p><a href="https://hackernoon.com/working-with-strings-in-solidity-c4ff6d5f8008" rel="nofollow">fun article about Solidity strings</a></p>
+<p>My opinion: it might be a fun exercise to write your own string type and publish it for general use.</p>
+<h5><a id="user-content-address-type" class="anchor" aria-hidden="true" href="#address-type"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Address Type</h5>
+<p>Unique perhaps to Solidity, we have an <em>address</em> datatype, specifically for Ethereum wallet or contract addresses. It's a 20 byte value specifically for storing addresses of that particular size. In addition, it has type members specifically for addresses of that kind.</p>
+<p><code>address internal boxingOracleAddr = 0x145ca3e014aaf5dca488057592ee45305d9b3a22;</code></p>
+<p><a href="https://ethereum.stackexchange.com/questions/34024/when-exactly-address-datatype-should-be-used" rel="nofollow">Address Data Types</a></p>
+<h5><a id="user-content-datetime-types" class="anchor" aria-hidden="true" href="#datetime-types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DateTime Types</h5>
+<p>There is no native Date or DateTime type in Solidity per se, as there is in Javascript for example (oh no, Solidity's sounding worse &amp; worse with every paragraph!?). Dates are natively addressed as timestamps of type uint (uint256). They are generally handles as Unix-style timestamps (seconds rather than milliseconds), as the block timestamp is a unix-style timestamp. In cases where you find yourself needing human-readable dates for various reasons, there are open-source libraries available. You might notice that I've used one in BoxingOracle:
+<a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol">DateLib.sol</a>. OpenZeppelin also has date utilities as well as many other types of general utility libraries (We'll get to the <em>library</em> feature of Solidity shortly).
+Pro tip: <a href="https://openzeppelin.org/" rel="nofollow">OpenZeppelin</a> is a good source (but of course not the only good source) for both knowldege and pre-written generic code that may help you to build your contracts up.</p>
+<h4><a id="user-content-mappings" class="anchor" aria-hidden="true" href="#mappings"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mappings</h4>
+<p>Notice that line 11 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a> defines something called a <em>mapping</em>:</p>
+<p><code>mapping(bytes32 =&gt; uint) matchIdToIndex;</code></p>
+<p>A mapping in Solidity is a special data type for quick lookups; essentially a lookup table or similar to a hashtable, wherein (in this case) the data contained lives on the blockchain itself (when the mapping is defined, as it is here, as a class member). During the course of the contract's execution, we can add data to the mapping (similar to adding data to a hashtable), and later look up those values that we've added. Note again that in this case, the data that we addd is added to the blockchain itself, so it will persist. If we add it to the mapping today in New York, some guy a week from now in Istanbul can read it.</p>
+<p>Example of adding to the mapping, from line 71 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
+<p><code>matchIdToIndex[id] = newIndex+1</code></p>
+<p>Example of reading from the mapping, from line 51 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:
+<code>uint index = matchIdToIndex[_matchId];</code></p>
+<p>Items can also be removed from the mapping. It's not used in this project, but it would look like this:</p>
+<p><code>delete matchIdToIndex[_matchId];</code></p>
+<h4><a id="user-content-return-values" class="anchor" aria-hidden="true" href="#return-values"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Return Values</h4>
+<p>As you may have noticed, Solidity may have a bit of a superficial resemblance to Javascript, but it does not inherit much of Javascript's looseness of types and definitions. A contract code must be defined in a rather strict and restricted manner (and this is probably a good thing, considering the use case). With that in mind, consider the function definition from line 40 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a></p>
+<p><code>function _getMatchIndex(bytes32 _matchId) private view returns (uint) { ... }</code></p>
+<p>Ok so, let's first just do a quick overview of what's contained here. <em>function</em> marks it as a function. <em>_getMatchIndex</em> is the function name (the underscore is a convention that indicates a private member - we will discuss later). It takes one argument, named <em>_matchId</em> (this time the underscore convention is used to denote function arguments) of type <em>bytes32</em>. The keyword <em>private</em> actually makes the member private in scope, <em>view</em> tells the compiler that this function does not modify any data on the blockchain, and finally:</p>
+<p><code>returns (uint)</code></p>
+<p>This says that the function returns a uint (a function that returns void would simply have no <em>returns</em> clause here). Why is uint in parentheses? That's because Solidity functions can and often do return <em>typles</em>.</p>
+<p>Consider now, the following definition from line 166:</p>
+<p><code>function getMostRecentMatch(bool _pending) public view returns ( bytes32 id, string name, string participants, uint8 participantCount, uint date, MatchOutcome outcome, int8 winner) { ... }</code></p>
+<p>Check out the return clause on this one! It returns one, two... 7 different things. Ok so, this function returns these things as a tuple. Why? In the course of developing, you will often find yourself needing to return a struct (if it was Javascript you'd want to return a json object, probably). Well, as of this writing (in the future this may change) Solidity doesn't support returning structs from public functions. So you have to return tuples instead. If you're a Python guy you may be comfortable with tuples already. Many languages don't really support them though, at least not in this way.</p>
+<p>See line 159 for an example of returning a tuple as a return value:</p>
+<p><code>return (_matchId, "", "", 0, 0, MatchOutcome.Pending, -1);</code></p>
+<p>And how do we accept the return value of something like this? We can do like so:</p>
+<p><code>var (id, name, part, count, date, outcome, winner) = getMostRecentMatch(false);</code></p>
+<p>Alternatively, you can declare the variables explicitly beforehand, with their correct types:</p>
+<p>`
+//declare the variables
+bytes32 id;
+string name;</p>
+<p>... etc...</p>
+<p>int8 winner;</p>
+<p>//assign their values
+(id, name, part, count, date, outcome, winner) = getMostRecentMatch(false);
+`</p>
+<p>And now we have declared 7 variables to hold the 7 return values, which we can now use. Otherwise, supposing that we wanted just only one or two of the values, we can say:</p>
+<p>`
+//declare the variables
+bytes32 id;
+uint date;</p>
+<p>//assign their values
+(id,,,,date,,) = getMostRecentMatch(false);
+`</p>
+<p>See what we did there? We got just the two that we were interested in. Check out all of those commas ... we have to count them carefully!</p>
+<h4><a id="user-content-imports" class="anchor" aria-hidden="true" href="#imports"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Imports</h4>
+<p>Lines 3 and 4 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a> are imports:</p>
+<p><code>import "./Ownable.sol"; import "./DateLib.sol";</code>
+As you probably expect, these are importing definitions from code files that exist in the same contracts project folder as BoxingOracle.sol.</p>
+<h4><a id="user-content-modifiers" class="anchor" aria-hidden="true" href="#modifiers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modifiers</h4>
+<p>Notice that the function definitions have a bunch of modifiers attached. First, there is visibility: private, public, internal, and external. <a href="https://forum.ethereum.org/discussion/3344/function-visibility-whats-the-difference-between-private-and-internal-if-any" rel="nofollow">function visibility</a>.</p>
+<p>Furthermore, you'll see keywords <em>pure</em> and <em>view</em>. These indicate to the compiler what sort of changes the function will make, if any. This is important because such a thing is a factor in the final gas cost of running the function. See here for explanation:
+<a href="https://solidity.readthedocs.io/en/v0.4.24/contracts.html" rel="nofollow">Solidity Docs</a></p>
+<p>Finally, what I really want to discuss, are custom modifiers. Have a look at line 61 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
+<p><code>function addMatch(string _name, string _participants, uint8 _participantCount, uint _date) onlyOwner public returns (bytes32) {</code></p>
+<p>Note the <em>onlyOwner</em> modifier just before the "public" keyword. This indicates that <em>only the owner</em> of the contract may call this method! While very important, this is not a native feature of Solidity (though maybe it will be in the future). Actually, "onlyOwner" is an example of a custom modifier that we create ourselves, and use. Let's have a look.</p>
+<p>First, the modifier is defined in the file <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, which you can see we have imported on line 3 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>:</p>
+<p><code>import "./Ownable.sol"</code></p>
+<p>Note that, in order to make use of the modifier, we've made <em>BoxingOracle</em> inherit from <em>Ownable</em>. Inside of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/Ownable.sol">Ownable.sol</a>, on line 25, we can find the definition for the modifier inside of the <em>Ownable</em> contract:</p>
+<p><code>modifier onlyOwner() { require(msg.sender == owner); _; }</code></p>
+<p>(this Ownable contract, by the way, is taken from one of <a href="https://openzeppelin.org/" rel="nofollow">OpenZeppelin</a>'s public contracts)</p>
+<p>Note that this thing is declared as a modifier, indicating that we can use it as we have, to modify a function. Note that the meat of the modifier is a 'require' statement. Require statements are kind of like asserts, but not for debugging. If the condition of the require statement fails, then the function will throw an exception. So to paraphrase this "require" statement:</p>
+<p><code>require(msg.sender == owner);</code></p>
+<p>We could say it means:</p>
+<p><code>if (msg.send != owner) throw an exception;</code></p>
+<p>And in fact, in Solidity 0.4.22 and higher, we can add an error message to that require statement:</p>
+<p><code>require(msg.sender == owner, "Error: this function is callable by the owner of the contract, only");</code></p>
+<p>Finally, in the curious-looking line:</p>
+<p><code>_;</code></p>
+<p>... the underscore is short-hand for "here execute the full content of the modified function". So in effect, the require statement will be executed first, followed by the actual function. So it's like pre-pending this line of logic to the modified function.</p>
+<p>There are of course more things that you can do with modifiers. Check the docs: <a href="https://solidity.readthedocs.io/en/v0.4.24/common-patterns.html" rel="nofollow">Docs</a></p>
+<h2><a id="user-content-libraries" class="anchor" aria-hidden="true" href="#libraries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Libraries</h2>
+<p>There is a language feature of Solidity known as the <em>library</em>. We have an example in our project, at <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol">DateLib.sol</a>.</p>
+<p>This is a library for better easier handling of date types. It's imported into BoxingOracle at line 4:</p>
+<p><code>import "./DateLib.sol";</code></p>
+<p>... and it's used at line 13:</p>
+<p><code>using DateLib for DateLib.DateTime;</code></p>
+<p><em>DateLib.DateTime</em> is a struct that's expored from the DateLib contract (it's exposed as a member, see line 4 of <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol">DateLib.sol</a>) and we're declaring here that we're "using" the DateLib library for a certain data type. So the methods and operations declared in that library will apply to the data type that we've said it should. That's is how a library is used in Solidity.</p>
+<p>For a more clear example, check out some of <a href="https://openzeppelin.org/" rel="nofollow">OpenZeppelin</a>'s libraries for numbers, such as <a href="https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol">SafeMath</a>. These can be applied to native (numeric) Solidity data types (whereas here we've applied a library to a custom data type), and are widely used.</p>
+<h2><a id="user-content-interfaces" class="anchor" aria-hidden="true" href="#interfaces"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interfaces</h2>
+<p>As in mainstream object-oriented languages, interfaces are supported. Interfaces in Solidity are defined as contracts, but the function bodies are omitted for the functions. For an example of an interface definition, see <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol">OracleInterface.sol</a>. In this example, the interface is used as a stand-in for the oracle contract, the content of which resides in a separate contract with a separate address.</p>
+<h2><a id="user-content-naming-conventions" class="anchor" aria-hidden="true" href="#naming-conventions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming Conventions</h2>
+<p>Of course, naming conventions are not a global rule; as programmers, we know that we're free to follow the coding and naming conventions that appeal to us. On the other hand, we do want others to feel comfortable reading and working with our code, so some degree of standardization is desirable.</p>
+<h2><a id="user-content-project-overview" class="anchor" aria-hidden="true" href="#project-overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project Overview</h2>
+<p>So now that we've gone over some general language features present in the code files in question, we can begin to take a more specific look at the code itself, for this project.</p>
+<p>So, let's clarify the purpose of this project, once again. The purpose of this project is to provide a semi-realistic (or pseudo-realistic) demonstration and example of a smart contract that uses an oracle. At its heart, this is just a contract calling into another separate contract.</p>
+<p>The business case of the example can be stated as such:</p>
+<ul>
+<li>A user wants to make bets of varying sizes on boxing matches, paying money (ether) for the bets and collecting his/her winnings when and if he/she wins.</li>
+<li>A user makes these bets via a smart contract (in a real-life use case, this would be a full DApp with a web3 front end; but we are only examining the contracts side)</li>
+<li>A separate smart contract - the oracle - is maintained by a third party. Its job is to maintain a list of boxing matches with their current states (pending, in progress, finished, etc.) and, if finished, the winner.</li>
+<li>The main contract gets lists of pending matches from the oracle, and presents these to users as "bettable" matches.</li>
+<li>The main contract accepts bets up until the start of a match</li>
+<li>After a match is decided, the main contract divvies up the winnings and losings according to a simple algorithm, takes a cut for itself, and pays out the winnings upon request (losers simply lose their entire stake).</li>
+</ul>
+<p>The betting rules:</p>
+<ul>
+<li>There is a defined, minimum bet (defined in wei)</li>
+<li>There is no maximum bet; users can bet any amount that they like, above the minimum</li>
+<li>Users can place bets up until such time as the match becomes "in progress"</li>
+</ul>
+<p>Algorithm for dividing the winnings:</p>
+<ul>
+<li>All bets received are placed into a "pot"</li>
+<li>A small percentage is removed from the pot, for the house</li>
+<li>Each winner gets awarded a proportion of the pot, directly proportional to the relative size of their bets</li>
+<li>Winnings are calculated as soon as the very first user requests the results, after the match is decided</li>
+<li>Winnings are awarded upon request by the user</li>
+<li>In case of a draw, no one wins - everyone gets their stake back, and the house takes no cut</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer" href="/jrkosinski/oracle-example/blob/part2-step1/images/oracle-flow.png"><img src="/jrkosinski/oracle-example/raw/part2-step1/images/oracle-flow.png" alt="architecture" style="max-width:100%;"></a></p>
+<h2><a id="user-content-boxingoracle-the-oracle-contract" class="anchor" aria-hidden="true" href="#boxingoracle-the-oracle-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BoxingOracle: the Oracle Contract</h2>
+<h3><a id="user-content-main-functions-provided" class="anchor" aria-hidden="true" href="#main-functions-provided"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main Functions Provided</h3>
+<p>The oracle has two interfaces, you could say: one presented to the "owner" and maintainer of the contract, and one presented to the general public; that is, contracts which consume the oracle. The the maintainer, it offers functionality for feeding data into the contract; essentially taking data from the outside world and putting it onto the blockchain. To the public, it offers read-only access to said data. It's important to note that the contract itself restricts non-owners from editing any data, but read-only access to that data is publicly granted without restriction.</p>
+<p>To users:</p>
+<ul>
+<li>List all matches</li>
+<li>List pending matches</li>
+<li>Get details of a specific match</li>
+<li>Get status and outcome of a specific match</li>
+</ul>
+<p>To owner:</p>
+<ul>
+<li>Enter a match</li>
+<li>Change status of match</li>
+<li>Set outcome of match</li>
+</ul>
+<p>User story:</p>
+<ul>
+<li>A new boxing match is announced and confirmed for May 9th.</li>
+<li>I, the contract's maintainer (perhaps I am a well-known sports network or a new outlet), add the upcoming match to the oracle's data on the blockchain, with the status "pending". Anyone or any contract may now query and use this data however they like.</li>
+<li>When the match begins, I set the status of that match to "in progress".</li>
+<li>When the match ends, I set the status of the match to "completed", and modify the match data to denote the winner.</li>
+</ul>
+<h3><a id="user-content-oracle-code-review" class="anchor" aria-hidden="true" href="#oracle-code-review"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Oracle Code Review</h3>
+<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/BoxingOracle.sol">BoxingOracle.sol</a>; line numbers reference that file.</p>
+<p>On lines 10 and 11, we declare our storage place for Matches:</p>
+<p><code>Match[] matches; mapping(bytes32 =&gt; uint) matchIdToIndex;</code></p>
+<p><em>matches</em> is just a simple array for storing Match instances, and the mapping is just a facility for mapping a unique match id (a bytes32 value) to its index in the array. So that if someone hands us a raw id of a match, we can use this mapping to locate it.</p>
+<p>On line 17, our Match structure is defined and explained:</p>
+<p>`
+//defines a match along with its outcome
+struct Match {
+bytes32 id;             //unique id
+string name;            //human-friendly name (e.g. Jones vs. Holloway)
+string participants;    //a delimited string of participant names
+uint8 participantCount; //number of participants (always 2 for boxing matches!)
+uint date;              //GMT timestamp of date of contest
+MatchOutcome outcome;   //the outcome (if decided)
+int8 winner;            //index of the participant who is the winner
+}</p>
+<pre><code>//possible match outcomes 
+enum MatchOutcome {    
+    Pending,    //match has not been fought to decision       
+    Underway,   //match has started &amp; is underway        
+    Draw,       //anything other than a clear winner (e.g. cancelled)        
+    Decided     //index of participant who is the winner         
+}
+</code></pre>
+<p>`</p>
+<p>Line 61: function <em>addMatch</em> is for use only by the contract owner; it allows for the addition of a new match to the stored data.</p>
+<p>Line 80: function <em>declareOutcome</em> allows the contract owner to set a match as "decided", setting the participant who won.</p>
+<p>Lines 102-166: the following functions are all callable by the public. This is the read-only data that is open to the public in general:</p>
+<ul>
+<li>function *getPendingMatches" returns a list of ids of all matches whose current state is Pending.</li>
+<li>function <em>getAllMatches</em> returns a list of ids of all matches.</li>
+<li>function <em>getMatch</em> returns the full details of a single match, specified by id.</li>
+</ul>
+<p>Lines 193-204 declare functions that are mainly for testing, debugging, and diagnostics.</p>
+<ul>
+<li>function <em>testConnection</em> just tests that we are able to call the contract</li>
+<li>function <em>getAddress</em> returns the address of this contract</li>
+<li>function <em>addTestData</em> adds a bunch of test matches to the list of matches</li>
+</ul>
+<p>Feel free to explore around the code a bit before moving on to the next steps. I suggest running the oracle contract again in debug mode (as described in Part 1 of this series), call different functions, and examine the results.</p>
+<h2><a id="user-content-boxingbets-the-client-contract" class="anchor" aria-hidden="true" href="#boxingbets-the-client-contract"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BoxingBets: the Client Contract</h2>
+<p>It's important to define what the client contract (the betting contract) is responsible for, and what it's not responsible for. The client contract is <em>not</em> responsible for maintaining lists of real boxing matches or declaring their outcomes. We "trust" (yes I know, there's that sensitive word - uh oh - we will discuss in Part 3) the oracle for that service. The client contract is responsible for accepting bets. It's responsible for the algorithm that divvies up the winnings, and transfers them to the winners' accounts, based on the outcome of the match (as received from the oracle).</p>
+<p>Furthermore, everything is pull-based, there are no events or pushes. The contract pulls data in from the oracle. The contract pulls the outcome of the match from the oracle (in response to user request), and the contract calculates winnings and transfers them in response to user request.</p>
+<h3><a id="user-content-main-functions-provided-1" class="anchor" aria-hidden="true" href="#main-functions-provided-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Main Functions Provided</h3>
+<ul>
+<li>List all pending matches</li>
+<li>Get details of a specific match</li>
+<li>Get status and outcome of a specific match</li>
+<li>Place a bet</li>
+<li>Request/receive winnings</li>
+</ul>
+<h3><a id="user-content-client-code-review" class="anchor" aria-hidden="true" href="#client-code-review"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client Code Review</h3>
+<p>This review is based entirely on <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/BoxingBets.sol">BoxingBets.sol</a>; line numbers reference that file.</p>
+<p>Lines 12 and 13, the first lines of code in the contract, define some mappings in which we'll store our contract's data.
+Line 12 maps user addresses to lists of ids. This is mapping a user to a list of ids of bets which belong to the user. So, for any given user address, we can quickly get a list of all bets that have been made by that user.</p>
+<p><code>mapping(address =&gt; bytes32[]) private userToBets;</code></p>
+<p>Line 13 maps a match's unique id, to a list of Bet instances. With this we can, for any given match, get a list of all bets that have been made for that match.</p>
+<p><code>mapping(bytes32 =&gt; Bet[]) private matchToBets;</code></p>
+<p>Lines 17 and 18 are related to the connection to our oracle. First, in the <em>boxingOracleAddr</em> variable, we store the address of the oracle contract (set to zero by default). We could hard-code the oracle's address, but then we'd never be able to change it (not being able to change the oracle's address could be a good or bad thing - we can discuss in Part 3). The next line creates an instance of the oracle's interface (which is defined in <a href="https://github.com/jrkosinski/oracle-example/blob/part2-step1/client/contracts/OracleInterface.sol">OracleInterface.sol</a>) and stores it in a variable.</p>
+<p><code>//boxing results oracle address internal boxingOracleAddr = 0; OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr);</code></p>
+<p>If you jump ahead to line 58, you'll see the <em>setOracleAddress</em> function, in which this oracle address can be changed, and in which the <em>boxingOracle</em> instance is re-instantiated with a new address.</p>
+<p>Line 21 defines our minimum bet size, in <strong>wei</strong>. This is of course actually a very small amount, just 0.000001 ether.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/jrkosinski/oracle-example/blob/part2-step1/images/nowei.jpg"><img src="/jrkosinski/oracle-example/raw/part2-step1/images/nowei.jpg" alt="wei" style="max-width:100%;"></a></p>
+<p><code>uint internal minimumBet = 1000000000000;</code></p>
+<p>On lines 58 and 66 respectively, we have the <em>setOracleAddress</em> and the <em>getOracleAddress</em> functions. The <em>setOracleAddress</em> has the <em>onlyOwner</em> modifier, because only the owner of the contract can switch out the oracle for another oracle (probably not a good idea! but we will discuss in Part 3). The <em>getOracleAddress</em> function, on the other hand, is publicly callable; anyone can see what oracle is being used.</p>
+<p>`
+function setOracleAddress(address _oracleAddress) external onlyOwner returns (bool) {...</p>
+<p>function getOracleAddress() external view returns (address) { ....
+`</p>
+<p>On lines 72 and 79, we have the <em>getBettableMatches</em> and <em>getMatch</em> functions, respectively. Note that these are simply forwarding the calls on to the oracle, and returning the result.</p>
+<p>`
+function getBettableMatches() public view returns (bytes32[]) {...</p>
+<p>function getMatch(bytes32 _matchId) public view returns ( ....
+`</p>
+<p>The <em>placeBet</em> function is a very important one (line 108).</p>
+<p><code>function placeBet(bytes32 _matchId, uint8 _chosenWinner) public payable { ...</code></p>
+<p>A striking feature of this one is the <em>payable</em> modifier; we've been so busy discussing general language features that we have not yet touched upon the centrally important feature of being able to send money along with function calls! That's basically what it is - it's a function which can accept an amount of money along with any other arguments and data sent.</p>
+<p>We need this here because this is where the user simultaneously defines what bet they're going to make, how much money they intend to have riding on that bet, and actually send the money. The <em>payable</em> modifier enables that. Before accepting the bet, we do a bunch of checks to ensure the validity of the bet. The first check on line 111 is:</p>
+<p><code>require(msg.value &gt;= minimumBet, "Bet amount must be &gt;= minimum bet");</code></p>
+<p>The amount of money sent is stored in <em>msg.value</em>. Assuming that all of the checks pass, on line 123 we will transfer that amount into ownership of the oracle, taking ownership of that amount away from the user, and into the contract's possession:</p>
+<p><code>address(this).transfer(msg.value);</code></p>
+<p>Finally, on line 136, we have a testing/debugging helper function that will help us to know whether or not the contract is connected to a valid oracle:</p>
+<p><code>function testOracleConnection() public view returns (bool) { return boxingOracle.testConnection(); }</code></p>
+<h2><a id="user-content-conclusion" class="anchor" aria-hidden="true" href="#conclusion"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
+<p><em>And this is actually as far as this example goes; just accepting the bet.</em> The functionality for dividing up the winnings and paying out, as well as some other logic was intentionally left out, in order to keep the example simple enough for our purpose, which is simply to demonstrate the use of an oracle with a contract. That more complete and complex logic exists in another project currently, which is an extension of this example and is still in development.</p>
+<p>So now we have a better understanding of the codebase, and have used it as a vehicle and jumping-off point to discuss some of the language features offered by Solidity. The main purpose of this three-part series is to demonstrate and discuss the use of a contract with an oracle. The purpose of this part is to understand this specific code a little bit better, and to use it as an embarkation point into understanding some features of Solidity and smart contract development. The purpose of the third and final part will be to discuss the strategy and philosophy of oracle usage, and how it fits conceptually into the smart contract model.</p>
+<h2><a id="user-content-further-optional-steps" class="anchor" aria-hidden="true" href="#further-optional-steps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further Optional Steps</h2>
+<p>I would highly encourage readers who wish to learn more, to take this code and play with it. Implement new features. Fix any bugs. Implement un-implemented features (such as the payment interface). Test the function calls. Modify them and retest to see what happens. Add a web3 front end. Add a facility for removing matches, or modifying their outcomes (in case of mistake). What about cancelled matches? Implement a second oracle... of course a contract is free to use as many oracles as it likes, but what problems does that incur? Have fun with it; that's a great way to learn, and when you do it that way (and derive enjoyment from it) you're sure to retain more of what you've learned.</p>
+<p>A sample, non-comprehensive list of things to try:</p>
+<ul>
+<li>run both the contract and the oracle in local testnet (in truffle, as described in Part 1) and call all callable functions, and all test functions.</li>
+<li>add functionality for calculating the winnings and paying them out, on completion of a match</li>
+<li>add functionality for refunding all bets in case of draw</li>
+<li>add a feature to request a refund or cancellation a bet, before the match begins</li>
+<li>add a feature to allow for the fact that matches can sometimes get cancelled (and everyone will need a refund in that case)</li>
+<li>implement a feature to guarantee that the oracle that was in place when a user placed a bet, is the same oracle that will be used to determine the outcome of that match</li>
+<li>implement another (second) oracle, which has some different features associated with it, or possibly serves a sport other than boxing (note that the participants count and list allows for different types of sports, so we're not actually restricted to just boxing)</li>
+<li>implement getMostRecentMatch so that it actually returns either the most recently added match, or the match that's closest to the current date in terms of when it will occur</li>
+<li>implement exception handling</li>
+</ul>
+<p>Once you're familiar with the mechanics of the relationship between the contract and the oracle, in Part 3 of of this three-part series we will discuss some of the strategic, design, and philosophical issues raised by this example.</p>
+</article>
+  </div>
+
+    </div>
+
+  
+
+  <details class="details-reset details-overlay details-overlay-dark">
+    <summary data-hotkey="l" aria-label="Jump to line"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast linejump" aria-label="Jump to line">
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-jump-to-line-form Box-body d-flex" action="" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input class="form-control flex-auto mr-3 linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+        <button type="submit" class="btn" data-close-dialog>Go</button>
+</form>    </details-dialog>
+  </details>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+        
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2018 <span title="0.26299s from unicorn-77c89cc58d-lxhfd">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon mr-lg-4" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://blog.github.com" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" integrity="sha512-mal0oz3cFcr4OqIE2eo7Pmax6HtpOKvQfO4vqg9JuCb+iaf4H3KUP9Aryp4oP5mSMgEYUOwgBOAL6MTFaeCZ3w==" type="application/javascript" src="https://assets-cdn.github.com/assets/compat-3c69a4d015c4208bce7a9d5e4e15a914.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-MvNlmXbTAwL0N0zMxw8W6vtjWLf0QFvwVzvN8rZIJNdzFy9OJp2d4LQD9WA2rDNcHewz0PB9x/0G0Z9FOuUWgw==" type="application/javascript" src="https://assets-cdn.github.com/assets/frameworks-a2f69f341e3df821fdcb56e335ef9920.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-ixxvBZF3eRHUBFtQhqjNyIJRouOkAqo1Glgy607wMwbpAT1Gu/1tGo5impwGiQi9DBWBeaXnVFEXmNTyPZjT3g==" type="application/javascript" src="https://assets-cdn.github.com/assets/github-1f0ca6fc0ad418e21430c85ad0f2544d.js"></script>
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+  </div>
+</div>
+
+  <template id="site-details-dialog">
+  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark" open>
+    <summary aria-haspopup="dialog" aria-label="Close dialog"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast">
+      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog>
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+      </button>
+      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
+    </details-dialog>
+  </details>
+</template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  </body>
+</html>
+
