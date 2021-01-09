@@ -339,7 +339,7 @@ import "./DateLib.sol";
 using DateLib for DateLib.DateTime;
 `
 
-*DateLib.DateTime* is a struct that's expored from the DateLib contract (it's exposed as a member, see line 4 of [DateLib.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol)) and we're declaring here that we're "using" the DateLib library for a certain data type. So the methods and operations declared in that library will apply to the data type that we've said it should. That's is how a library is used in Solidity. 
+*DateLib.DateTime* is a struct that's exported from the DateLib contract (it's exposed as a member, see line 4 of [DateLib.sol](https://github.com/jrkosinski/oracle-example/blob/part2-step1/oracle/contracts/DateLib.sol)) and we're declaring here that we're "using" the DateLib library for a certain data type. So the methods and operations declared in that library will apply to the data type that we've said it should. That's is how a library is used in Solidity. 
 
 For a more clear example, check out some of [OpenZeppelin](https://openzeppelin.org/)'s libraries for numbers, such as [SafeMath](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol). These can be applied to native (numeric) Solidity data types (whereas here we've applied a library to a custom data type), and are widely used. 
 
