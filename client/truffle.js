@@ -18,6 +18,11 @@ module.exports = {
 		  host: "localhost",
 		  port: 8545,
 		  network_id: "*" // Match any network id
-		}
-	}
+		},
+	},
+	compilers: {
+		solc: {
+		  version: "0.8.4", // or whichever version you need
+		},
+	  },
 };
