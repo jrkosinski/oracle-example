@@ -1,4 +1,5 @@
-pragma solidity ^0.4.16;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
 
 library DateLib {
     struct DateTime {
@@ -21,7 +22,6 @@ library DateLib {
 
     uint16 constant ORIGIN_YEAR = 1970;
 
-
     function _getYear(uint _timestamp) private pure returns (uint16) {
         uint secondsAccountedFor = 0;
         uint16 year;
@@ -32,13 +32,14 @@ library DateLib {
         numLeapYears = leapYearsBefore(year) - leapYearsBefore(ORIGIN_YEAR);
 
         secondsAccountedFor += LEAP_YEAR_IN_SECONDS * numLeapYears;
-        secondsAccountedFor += YEAR_IN_SECONDS * (year - ORIGIN_YEAR - numLeapYears);
+        secondsAccountedFor +=
+            YEAR_IN_SECONDS *
+            (year - ORIGIN_YEAR - numLeapYears);
 
         while (secondsAccountedFor > _timestamp) {
             if (isLeapYear(uint16(year - 1))) {
                 secondsAccountedFor -= LEAP_YEAR_IN_SECONDS;
-            }
-            else {
+            } else {
                 secondsAccountedFor -= YEAR_IN_SECONDS;
             }
             year -= 1;
@@ -66,7 +67,6 @@ library DateLib {
         return uint8(_timestamp % 60);
     }
 
-
     function getWeekday(uint _timestamp) internal pure returns (uint8) {
         return uint8((_timestamp / DAY_IN_SECONDS + 4) % 7);
     }
@@ -89,26 +89,38 @@ library DateLib {
         return year / 4 - year / 100 + year / 400;
     }
 
-    function getDaysInMonth(uint8 _month, uint16 _year) internal pure returns (uint8) {
-        if (_month == 1 || _month == 3 || _month == 5 || _month == 7 || _month == 8 || _month == 10 || _month == 12) {
+    function getDaysInMonth(
+        uint8 _month,
+        uint16 _year
+    ) internal pure returns (uint8) {
+        if (
+            _month == 1 ||
+            _month == 3 ||
+            _month == 5 ||
+            _month == 7 ||
+            _month == 8 ||
+            _month == 10 ||
+            _month == 12
+        ) {
             return 31;
-        }
-        else if (_month == 4 || _month == 6 || _month == 9 || _month == 11) {
+        } else if (_month == 4 || _month == 6 || _month == 9 || _month == 11) {
             return 30;
-        }
-        else if (isLeapYear(_year)) {
+        } else if (isLeapYear(_year)) {
             return 29;
-        }
-        else {
+        } else {
             return 28;
         }
     }
 
-    function fromTimestamp(uint _timestamp) internal pure returns (DateTime) { 
-        return fromUnixTimestamp(_timestamp/1000);
+    function fromTimestamp(
+        uint _timestamp
+    ) internal pure returns (DateTime memory) {
+        return fromUnixTimestamp(_timestamp / 1000);
     }
 
-    function fromUnixTimestamp(uint _timestamp) internal pure returns (DateTime dt) {
+    function fromUnixTimestamp(
+        uint _timestamp
+    ) internal pure returns (DateTime memory dt) {
         uint secondsAccountedFor = 0;
         uint buf;
         uint8 i;
@@ -153,20 +165,23 @@ library DateLib {
         dt.weekday = getWeekday(_timestamp);
     }
 
-    function toTimestamp(DateTime _date) internal pure returns (uint timestamp) {
-        uint output = toUnixTimestamp(_date); 
+    function toTimestamp(
+        DateTime memory _date
+    ) internal pure returns (uint timestamp) {
+        uint output = toUnixTimestamp(_date);
         return output * 1000 + _date.ms;
     }
 
-    function toUnixTimestamp(DateTime _date) internal pure returns (uint timestamp) {
+    function toUnixTimestamp(
+        DateTime memory _date
+    ) internal pure returns (uint timestamp) {
         uint16 i;
 
         // Year
         for (i = ORIGIN_YEAR; i < _date.year; i++) {
             if (isLeapYear(i)) {
                 timestamp += LEAP_YEAR_IN_SECONDS;
-            }
-            else {
+            } else {
                 timestamp += YEAR_IN_SECONDS;
             }
         }
@@ -176,8 +191,7 @@ library DateLib {
         monthDayCounts[0] = 31;
         if (isLeapYear(_date.year)) {
             monthDayCounts[1] = 29;
-        }
-        else {
+        } else {
             monthDayCounts[1] = 28;
         }
         monthDayCounts[2] = 31;
