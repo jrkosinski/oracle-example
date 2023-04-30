@@ -13,7 +13,8 @@ contract BoxingBets is Ownable {
     mapping(bytes32 => Bet[]) private matchToBets;
 
     //boxing results oracle
-    address internal boxingOracleAddr =  0x9B5d5c8d2d946f25aD1FbCEF3cFaFE58c6CB7A6A;
+    address internal boxingOracleAddr =
+        0xac43B6b6CB4666E95795538C70658DeA06B57189; // you must deploy BoxingOracle.sol to get the address of the smart contract
     OracleInterface internal boxingOracle = OracleInterface(boxingOracleAddr);
 
     //constants
